@@ -2,9 +2,22 @@
   "name": "frieren-scraper",
   "version": "0.0.1",
   "description": "Frieren-scraper.",
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "types": "./dist/@types/index.d.ts",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "types": "./dist/@types/index.d.ts",
+  "main": "./dist/cjs/index.js",
   "scripts": {
-    "test": "exit 0"
+    "clean": "rimraf ./dist",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:all": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types && node scripts/write-package.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +26,7 @@
   "keywords": [
     "scraper"
   ],
-  "author": "david",
+  "author": "FrierenDv",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/xct007/frieren-scraper/issues"
@@ -24,7 +37,16 @@
     "cheerio": "^1.0.0-rc.12"
   },
   "devDependencies": {
-    "ts-node": "^10.9.1",
+    "@types/node": "^18.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "rimraf": "^4.1.2",
     "typescript": "^4.9.5"
   }
 }
