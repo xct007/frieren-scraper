@@ -1,20 +1,19 @@
-# Challenge
+### Challenge
 - Scrape only using
-  - Axios
-  - Cheerio
-  - None
+  - [x] Axios
+  - [x] Cheerio
 
 and results must be JSON Object.
 
-# Target
+### Target
 You decide, you can open issues what website/app and data to be scrapped.
 - Website
-  - None
+  - [x] doujindesu
 - App
   - None
 
-# Jobs done.
-- Doujindesu
-  - latest
-  - search
-  - detail
+### Jobs done.
+- [x] Doujindesu
+  - [x] latest
+  - [x] search
+  - [x] detail
