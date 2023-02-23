@@ -1,0 +1,16 @@
+{
+  "display": "BASE",
+  "compilerOptions": {
+      "declaration": true,
+      "sourceMap": true,
+      "declarationMap": true,
+      "esModuleInterop": true,
+      "checkJs": true,
+      "target": "ES2019",
+      "moduleResolution": "node",
+      "strict": true,
+      "allowJs": true,
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"]
+}

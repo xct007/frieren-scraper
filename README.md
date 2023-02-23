@@ -12,3 +12,9 @@ You decide, you can open issues what website/app and data to be scrapped.
   - None
 - App
   - None
+
+# Jobs done.
+- Doujindesu
+  - latest
+  - search
+  - detail
