@@ -123,9 +123,4 @@ async function detail(url: string): Promise<DoujindesuDetail | errorHandling> {
 		return { error: true, message: e?.TypeError || String(e) };
 	}
 }
-const doujindesu = {
-	latest,
-	search,
-	detail,
-};
-export { doujindesu };
+export { latest, search, detail };

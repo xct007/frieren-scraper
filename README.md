@@ -19,7 +19,7 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] latest
     - [x] search
     - [x] detail
-  - [x] otakudesu
+  - [x] Otakudesu
     - [x] latest
     - [x] search
-    - [ ] detail
+    - [x] detail

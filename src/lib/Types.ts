@@ -43,3 +43,4 @@ export type OtakudesuSearch = {
 	url: string;
 	thumbnail: string;
 }[];
+export type OtakudesuDetail = {};
