@@ -153,7 +153,7 @@ async function detail(url: string): Promise<OtakudesuDetail | errorHandling> {
 				thumbnail,
 				urls,
 			};
-		} else if (/\/episode\//i) {
+		} else if (/\/episode\//i.test(url)) {
 			const info: string[] = [];
 			let metadata: any = {};
 			$(".infozingle > p").each((i: number, e: any) => {
