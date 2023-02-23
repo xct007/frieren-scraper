@@ -28,3 +28,18 @@ export type DoujindesuDetail = {
 		url: string;
 	}[];
 };
+export type OtakudesuLatest = {
+	title: string;
+	day: string;
+	date: string;
+	url: string;
+	thumbnail: string;
+}[];
+export type OtakudesuSearch = {
+	title: string;
+	genres: string;
+	status: string;
+	rating: string;
+	url: string;
+	thumbnail: string;
+}[];

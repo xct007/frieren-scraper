@@ -126,6 +126,6 @@ async function detail(url: string): Promise<DoujindesuDetail | errorHandling> {
 const doujindesu = {
 	latest,
 	search,
-	detail
+	detail,
 };
-export { doujindesu }
+export { doujindesu };

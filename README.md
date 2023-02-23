@@ -9,6 +9,7 @@ and results must be JSON Object.
 You decide, you can open issues what website/app and data to be scrapped.
 - Website
   - [x] doujindesu
+  - [x] otakudesu
 - App
   - None
 
@@ -17,3 +18,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] latest
   - [x] search
   - [x] detail
+- [x] otakudesu
+  - [x] latest
+  - [x] search
+  - [ ] detail
