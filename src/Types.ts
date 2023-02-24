@@ -52,3 +52,14 @@ export type YoutubeSearchResult = {
 	views: string;
 	url: string;
 }[];
+export type AnoboyLatest = {
+	title: string;
+	update: string;
+	thumbnail: string;
+	url: string;
+}[];
+export type AnoboyDetail = {
+	title: string;
+	judi: string;
+	urls: {source: string, url: string, resolution: string }[];
+}

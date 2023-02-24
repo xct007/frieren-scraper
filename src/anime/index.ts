@@ -1,4 +1,4 @@
 import * as doujindesu from './doujindesu'
 import * as otakudesu from './otakudesu'
-
-export { doujindesu, otakudesu }
+import * as anoboy from './anoboy'
+export { doujindesu, otakudesu, anoboy }

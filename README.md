@@ -16,7 +16,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 - App
   - None
 
-### Jobs done.
+### Progress.
 - [ ] Anime
   - [x] Doujindesu
     - [x] latest
@@ -26,10 +26,10 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] latest
     - [x] search
     - [x] detail
-  - [ ] Anoboy
-    - [ ] latest
-    - [ ] search
-    - [ ] detail
+  - [x] Anoboy
+    - [x] latest
+    - [x] search
+    - [x] detail
   - [ ] Komiku.id
     - [ ] latest
     - [ ] search

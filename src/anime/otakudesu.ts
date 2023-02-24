@@ -14,7 +14,7 @@ async function latest (): Promise<OtakudesuLatest[] | errorHandling> {
 			.catch((e: any) => e?.response)
 		const $ = Cheerio(data)
 		const _temp: any[] = []
-		$('.venz > ul > li').each((i: number, e: any) => {
+		$('.venz > ul > li').each((i: number, e: Element) => {
 			const title: string = $(e).find('h2.jdlflm').text()
 			const day: string = $(e).find('.epztipe').text().trim()
 			const date: string = $(e).find('.newnime').text().trim()
@@ -48,7 +48,7 @@ async function search (
 			.catch((e: any) => e?.response)
 		const $ = Cheerio(data)
 		const _temp: any = []
-		$('.venutama > .page > ul > li').each((i: number, e: any) => {
+		$('.venutama > .page > ul > li').each((i: number, e: Element) => {
 			const title: string = $(e).find('h2').text().trim()
 			const url: string = $(e).find('h2 > a').attr('href')
 			const _set: string[] = []
@@ -85,21 +85,21 @@ async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 		const $ = Cheerio(data)
 		if (/\/anime\//i.test(url)) {
 			const Info: any = {}
-			$('.infozingle > p').each((i: number, e: any) => {
+			$('.infozingle > p').each((i: number, e: Element) => {
 				Info[$(e).text().split(': ')[0].toLowerCase().replace(' ', '_')] = $(e)
 					.text()
 					.split(': ')[1]
 			})
 			const thumbnail: string = $('.fotoanime > img').attr('src')
 			const sinopsis: string[] = []
-			$('.sinopc > p').each((i: number, e: any) => {
+			$('.sinopc > p').each((i: number, e: Element) => {
 				sinopsis.push($(e).text())
 			})
 			const hasEps: { title: string; url: string }[] | any[] = []
 			let hasBatch: string | boolean = false
 			$('.episodelist')
 				.find('a')
-				.each((i: number, e: any) => {
+				.each((i: number, e: Element) => {
 					const _url: string = $(e).attr('href')
 					if (/\/batch\//i.test(_url)) {
 						hasBatch = _url
@@ -107,7 +107,7 @@ async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 				})
 			$('#venkonten > div.venser > div.episodelist:nth-child(8)')
 				.find('a')
-				.each((i: number, e: any) => {
+				.each((i: number, e: Element) => {
 					hasEps.push({
 						title: $(e).text(),
 						url: $(e).attr('href')
@@ -128,7 +128,7 @@ async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 			const thumbnail: string = $('.imganime').find('img').attr('src')
 			const episode: string = $('.totalepisode > .total').text()
 			const urls: any = {}
-			$('div.batchlink > ul > li').each((i: number, e: any) => {
+			$('div.batchlink > ul > li').each((i: number, e: Element) => {
 				const resolution: string | any = $(e)
 					.find('strong')
 					.text()
@@ -136,7 +136,7 @@ async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 					.trim()
 				$(e)
 					.find('a')
-					.each((_i: number, _e: any) => {
+					.each((_i: number, _e: Element) => {
 						urls[resolution] = urls[resolution] ? urls[resolution] : []
 						urls[resolution].push({
 							source: $(_e).text(),
@@ -154,7 +154,7 @@ async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 		} else if (/\/episode\//i.test(url)) {
 			const info: string[] = []
 			let metadata: any = {}
-			$('.infozingle > p').each((i: number, e: any) => {
+			$('.infozingle > p').each((i: number, e: Element) => {
 				info.push($(e).text().split(': '))
 			})
 			metadata = info.reduce((final: any, [key, value]) => {
@@ -162,7 +162,7 @@ async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 				return final
 			}, {})
 			const urls: any = {}
-			$('div.download > ul > li').each((i: number, e: any) => {
+			$('div.download > ul > li').each((i: number, e: Element) => {
 				const resolution: string | any = $(e)
 					.find('strong')
 					.text()
@@ -170,7 +170,7 @@ async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 					.trim()
 				$(e)
 					.find('a')
-					.each((_i: number, _e: any) => {
+					.each((_i: number, _e: Element) => {
 						urls[resolution] = urls[resolution] ? urls[resolution] : []
 						urls[resolution].push({
 							source: $(_e).text(),

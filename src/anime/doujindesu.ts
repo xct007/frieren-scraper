@@ -16,7 +16,7 @@ async function latest (): Promise<DoujindesuLatest[] | errorHandling> {
 			.catch((e: any) => e?.response)
 		const $ = Cheerio(data)
 		const _temp: any[] = []
-		$('.feed#archives > .entries > .entry').each((i: any, e: any) => {
+		$('.feed#archives > .entries > .entry').each((i: number, e: Element) => {
 			const title: string = $(e).find('a').attr('title')
 			const url: string = DoujindesuBaseUrl + $(e).find('a').attr('href')
 			const thumbnail: string = $(e).find('img').attr('src')
@@ -53,7 +53,7 @@ async function search (
 			.catch((e: any) => e?.response)
 		const $ = Cheerio(data)
 		const _temp: any[] = []
-		$('.entries > .entry').each((i: number, e: any) => {
+		$('.entries > .entry').each((i: number, e: Element) => {
 			const title: string = $(e).find('a').attr('title')
 			const thumbnail: string = $(e).find('img').attr('src')
 			const type: string = $(e).find('.type').text().trim()
@@ -89,10 +89,10 @@ async function detail (url: string): Promise<DoujindesuDetail | errorHandling> {
 		const thumbnail: string = $('.thumbnail > a > img').attr('src')
 
 		const _metaData: any[] = []
-		$('.metadata > table > tbody > tr').each((i: any, e: any) => {
-			const rowD: any = $(e).find('td')
+		$('.metadata > table > tbody > tr').each((i: number, e: Element) => {
+			const rowD: Element = $(e).find('td')
 			const rowA: any[] = []
-			rowD.each((_i: any, _e: any) => {
+			rowD.each((_i: number, _e: Element) => {
 				rowA.push($(_e).text())
 			})
 			_metaData.push(rowA)
@@ -103,13 +103,13 @@ async function detail (url: string): Promise<DoujindesuDetail | errorHandling> {
 		}, {})
 
 		const _tags: string[] = []
-		$('.tags > a').each((i: number, e: any) => {
+		$('.tags > a').each((i: number, e: Element) => {
 			_tags.push($(e).text().trim())
 		})
 		const tags: string = _tags.join(', ')
 
 		const links: { title: string; url: string }[] = []
-		$('.linkdl > a').each((i: number, e: any) => {
+		$('.linkdl > a').each((i: number, e: Element) => {
 			links.push({ title: $(e).attr('title'), url: $(e).attr('href') })
 		})
 		return {
