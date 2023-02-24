@@ -44,3 +44,11 @@ export type OtakudesuSearch = {
 	thumbnail: string;
 }[];
 export type OtakudesuDetail = {};
+export type YoutubeSearchResult = {
+	title: string;
+	thumbnail: string;
+	duration: string;
+	uploaded: string;
+	views: string;
+	url: string;
+}[];

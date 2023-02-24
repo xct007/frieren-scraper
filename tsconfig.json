@@ -2,6 +2,9 @@
     "extends": "./tsconfig-base.json",
     "compilerOptions": {
         "noEmit": true,
-        "module": "ESNEXT"
-    }
+        "module": "commonjs"
+    },
+    "include": [
+        "src"
+    ]
 }

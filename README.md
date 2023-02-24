@@ -8,8 +8,10 @@ and results must be JSON Object.
 ### Target
 You decide, you can open issues what website/app and data to be scrapped.
 - Website
-  - [x] doujindesu
-  - [x] otakudesu
+  - [x] Doujindesu
+  - [x] Otakudesu
+  - [ ] Youtube
+  - [ ] Anoboy
 - App
   - None
 
@@ -23,3 +25,13 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] latest
     - [x] search
     - [x] detail
+  - [ ] Anoboy
+    - [ ] latest
+    - [ ] search
+    - [ ] detail
+- [ ] Downloader
+  - [ ] Youtube
+    - [ ] search
+      - [x] videos
+      - [ ] playlist
+      - [ ] channel

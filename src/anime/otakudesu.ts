@@ -1,4 +1,4 @@
-import { Axios, Cheerio } from '../Utils'
+import { Cheerio, Axios } from '../Utils'
 import { OtakudesuBaseUrl } from '../Constant'
 import {
 	errorHandling,
@@ -7,11 +7,9 @@ import {
 	OtakudesuDetail
 } from '../Types'
 
-const _Axios = Axios()
-
 async function latest (): Promise<OtakudesuLatest[] | errorHandling> {
 	try {
-		const { data } = await _Axios
+		const { data } = await Axios
 			.get(OtakudesuBaseUrl + '/ongoing-anime')
 			.catch((e: any) => e?.response)
 		const $ = Cheerio(data)
@@ -40,7 +38,7 @@ async function search (
 	query: string
 ): Promise<OtakudesuSearch[] | errorHandling> {
 	try {
-		const { data } = await _Axios
+		const { data } = await Axios
 			.get(OtakudesuBaseUrl, {
 				params: {
 					s: query,
@@ -83,7 +81,7 @@ async function search (
 }
 async function detail (url: string): Promise<OtakudesuDetail | errorHandling> {
 	try {
-		const { data } = await _Axios.get(url).catch((e: any) => e?.response)
+		const { data } = await Axios.get(url).catch((e: any) => e?.response)
 		const $ = Cheerio(data)
 		if (/\/anime\//i.test(url)) {
 			const Info: any = {}

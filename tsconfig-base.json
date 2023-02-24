@@ -1,12 +1,12 @@
 {
   "display": "BASE",
   "compilerOptions": {
-      "declaration": true,
+      "declaration": false,
       "sourceMap": true,
       "declarationMap": true,
       "esModuleInterop": true,
       "checkJs": true,
-      "target": "ES2019",
+      "target": "ES2021",
       "moduleResolution": "node",
       "strict": true,
       "allowJs": true,
