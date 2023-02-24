@@ -1,5 +1,5 @@
 // Source: https://github.com/puppeteer/puppeteer/blob/main/typescript-if-required.js
-
+// https://gtihub.com/BochilTeam/scraper/master/blob/scripts/compile-typescript.js
 const child_process = require("child_process");
 const fs = require("fs");
 const path = require("path");
