@@ -1,4 +1,5 @@
 import * as doujindesu from "./doujindesu";
 import * as otakudesu from "./otakudesu";
 import * as anoboy from "./anoboy";
-export { doujindesu, otakudesu, anoboy };
+import { komikuId } from "./komikuId";
+export { doujindesu, otakudesu, anoboy, komikuId };

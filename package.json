@@ -17,8 +17,9 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:types": "tsc -p tsconfig.types.json",
+    "fix": "fix-esm-import-path dist/esm",
     "build:all": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types && node scripts/write-package.js && npm run fix",
-    "fix": "npx fix-esm-import-path dist/esm"
+    "prepare": "npm run build:all"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
+    "fix-esm-import-path": "^1.3.1",
     "rimraf": "^4.1.2",
     "typescript": "^4.9.5"
   }

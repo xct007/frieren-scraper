@@ -1,3 +1,4 @@
 import * as youtube from "./youtube";
 import * as statusWa from "./statusWaIndonesia";
-export { youtube, statusWa };
+import { instagram } from "./instagram";
+export { youtube, statusWa, instagram };

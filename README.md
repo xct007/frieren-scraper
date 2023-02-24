@@ -17,7 +17,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Otakudesu
   - [ ] Youtube
   - [x] Anoboy
-  - [ ] Komiku.id
+  - [x] Komiku.id
 - App
   - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
@@ -36,19 +36,22 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] latest
     - [x] search
     - [x] detail
-  - [ ] Komiku.id
-    - [ ] latest
-    - [ ] search
-    - [ ] detail
+  - [x] Komiku.id
+    - [x] latest
+    - [x] search
+    - [x] detail
 - [ ] Downloader
   - [ ] Youtube
     - [ ] search
       - [x] videos
       - [ ] playlist
       - [ ] channel
+    - [x] dowload
   - [x] Status Video Wa Indonesia
     - [x] popular
     - [x] search
+  - [ ] Instagram
+    - [x] [v1](https://downloadgram.org)
 - [ ] Searching
   - [x] Unsplash
     - [x] search

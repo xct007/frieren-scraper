@@ -51,6 +51,14 @@ export type YoutubeSearchResult = {
 	views: string;
 	url: string;
 }[];
+export type YoutubeDownloadResult = {
+	title: string;
+	source: string;
+	duration: string;
+	thumbnail: string;
+	urls: { url: string; quality: string; ext: string }[];
+	mp3: string;
+};
 export type AnoboyLatest = {
 	title: string;
 	update: string;
@@ -83,4 +91,37 @@ export type UnsplashSearchResults = {
 		bio: string;
 		social: { [key: string]: any };
 	};
+}[];
+export type InstagramDownloadResults = {
+	url: string;
+}[];
+export type KomikuIdLatestResults = {
+	title: string;
+	updated: string;
+	chapter: string;
+	thumbnail: string;
+	url: string;
+}[];
+export type KomikuIdDetailResult = {
+	Manga: {
+		isManga: boolean;
+		title: string;
+		metadata: { [key: string]: any };
+		description: string;
+		chapters: { chapter: string; url: string }[];
+	};
+	Chapter: {
+		isChapter: boolean;
+		title: string;
+		images: string[];
+	};
+};
+export type KomikuIdSearchResults = {
+	title: string;
+	title_id: string;
+	awal?: string;
+	terbaru?: string;
+	description: string;
+	thumbnail: string;
+	url: string;
 }[];

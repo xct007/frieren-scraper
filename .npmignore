@@ -1,8 +1,0 @@
-.eslintrc.json
-node_modules
-src
-scripts
-*lock.json
-*.lock
-*.log
-.github
