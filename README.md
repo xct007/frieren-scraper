@@ -12,6 +12,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Otakudesu
   - [ ] Youtube
   - [ ] Anoboy
+  - [ ] Komiku.id
 - App
   - None
 
@@ -26,6 +27,10 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] search
     - [x] detail
   - [ ] Anoboy
+    - [ ] latest
+    - [ ] search
+    - [ ] detail
+  - [ ] Komiku.id
     - [ ] latest
     - [ ] search
     - [ ] detail
