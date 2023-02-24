@@ -58,8 +58,10 @@ You decide, you can open issues what website/app and data to be scrapped.
 
 ### Test build
 - Install packages.
+
+using npm instead yarn.
 ```bash
-yarn add github:xct007/frieren-scraper
+npm i github:xct007/frieren-scraper
 ```
 - Usage example.
 ```js
