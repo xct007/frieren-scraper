@@ -1,15 +1,15 @@
 import { Axios } from "../Utils";
-import { statusWaIndonesiaBaseUrl } from "../Constant";
-import { statusWaIndonesiaAny, errorHandling } from "../Types";
+import { StatusWaIndonesiaBaseUrl } from "../Constant";
+import { StatusWaIndonesiaAny, errorHandling } from "../Types";
 
 async function popular(
 	page: string = "1",
-    seed: string = "6316"
-): Promise<statusWaIndonesiaAny[] | errorHandling> {
+	seed: string = "6316"
+): Promise<StatusWaIndonesiaAny[] | errorHandling> {
 	try {
 		const { data } = await Axios.request({
 			url:
-				statusWaIndonesiaBaseUrl +
+				StatusWaIndonesiaBaseUrl +
 				"/videostatus_studio/videostatus_indonesia/get_new_video_portrait.php",
 			method: "POST",
 			headers: { ["Content-Type"]: "application/x-www-form-urlencoded" },
@@ -31,11 +31,11 @@ async function search(
 	query: string,
 	page: string = "1",
 	seed: string = "3013"
-): Promise<statusWaIndonesiaAny[] | errorHandling> {
+): Promise<StatusWaIndonesiaAny[] | errorHandling> {
 	try {
 		const { data } = await Axios.request({
 			url:
-				statusWaIndonesiaBaseUrl +
+				StatusWaIndonesiaBaseUrl +
 				"/videostatus_studio/videostatus_indonesia/get_new_video_portrait.php",
 			method: "POST",
 			headers: { ["Content-Type"]: "application/x-www-form-urlencoded" },

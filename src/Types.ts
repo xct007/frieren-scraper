@@ -63,11 +63,25 @@ export type AnoboyDetail = {
 	judi: string;
 	urls: { source: string; url: string; resolution: string }[];
 };
-export type statusWaIndonesiaAny = {
+export type StatusWaIndonesiaAny = {
 	id: string;
 	title: string;
 	video_thumb: string;
 	video_url: string;
 	download: string;
 	date_time_i?: string;
+}[];
+export type UnsplashSearchResults = {
+	id: string;
+	created_at: string;
+	updated_at: string;
+	urls: { [key: string]: any };
+	links: {
+		download: string;
+	};
+	user: {
+		username: string;
+		bio: string;
+		social: { [key: string]: any };
+	};
 }[];
