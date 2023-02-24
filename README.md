@@ -14,7 +14,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Anoboy
   - [ ] Komiku.id
 - App
-  - None
+  - [ ] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
 
 ### Progress.
 - [ ] Anime
@@ -40,3 +40,5 @@ You decide, you can open issues what website/app and data to be scrapped.
       - [x] videos
       - [ ] playlist
       - [ ] channel
+  - [ ] Status Video Wa Indonesia
+    - [ ] etc.
