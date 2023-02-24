@@ -52,3 +52,21 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [ ] Searching
   - [x] Unsplash
     - [x] search
+
+### Test build
+- Install packages.
+```bash
+yarn add github:xct007/frieren-scraper
+```
+- Usage example.
+```js
+import { unsplash } from "frieren-scraper";
+
+const ArrObj = await unsplash.search("flowers");
+console.log(ArrObj)
+```
+see all exported module.
+```js
+import * as scrape from "frieren-scraper";
+console.log(scrape)
+```
