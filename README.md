@@ -11,7 +11,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Doujindesu
   - [x] Otakudesu
   - [ ] Youtube
-  - [ ] Anoboy
+  - [x] Anoboy
   - [ ] Komiku.id
 - App
   - None
