@@ -1,2 +1,2 @@
-export * from './anime'
-export * from './downloader'
+export * from "./anime";
+export * from "./downloader";

@@ -1,2 +1,3 @@
-import * as youtube from './youtube'
-export { youtube }
+import * as youtube from "./youtube";
+import * as statusWa from "./statusWaIndonesia";
+export { youtube, statusWa };
