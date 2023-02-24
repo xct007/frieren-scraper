@@ -7,7 +7,6 @@ export type DoujindesuLatest = {
 	chapter: string;
 	thumbnail: string;
 	url: string | any;
-	tags: any | string;
 }[];
 export type DoujindesuSearch = {
 	title: string;
@@ -16,11 +15,11 @@ export type DoujindesuSearch = {
 	score: string;
 	thumbnail: string;
 	url: string;
-	tags: any | string;
 }[];
 export type DoujindesuDetail = {
 	title: string;
 	titles: string;
+	tags: string;
 	thumbnail: string;
 	metadata?: {};
 	links: {

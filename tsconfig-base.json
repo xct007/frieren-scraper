@@ -1,9 +1,10 @@
 {
   "display": "BASE",
   "compilerOptions": {
-      "declaration": false,
-      "sourceMap": true,
-      "declarationMap": true,
+      "removeComments": true,
+      "declaration": true,
+      "sourceMap": false,
+      "declarationMap": false,
       "esModuleInterop": true,
       "checkJs": true,
       "target": "ES2021",

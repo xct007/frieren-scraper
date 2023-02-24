@@ -7,28 +7,23 @@ import {
 	DoujindesuDetail,
 } from "../Types";
 
-const _Axios = Axios();
-
 async function latest(): Promise<DoujindesuLatest[] | errorHandling> {
 	try {
-		const { data } = await _Axios
-			.get(DoujindesuBaseUrl)
-			.catch((e: any) => e?.response);
+		const { data } = await Axios.get(DoujindesuBaseUrl).catch(
+			(e: any) => e?.response
+		);
 		const $ = Cheerio(data);
 		const _temp: any[] = [];
 		$(".feed#archives > .entries > .entry").each((i: number, e: Element) => {
 			const title: string = $(e).find("a").attr("title");
 			const url: string = DoujindesuBaseUrl + $(e).find("a").attr("href");
 			const thumbnail: string = $(e).find("img").attr("src");
-			const tags: string | any =
-				$(e).attr("data-tags")?.split("|")?.join(", ") || "";
 			const chapter: string = $(e).find(".artists > a > span").text();
 			_temp.push({
 				title,
 				chapter,
 				thumbnail,
 				url,
-				tags,
 			});
 		});
 		if (Array.isArray(_temp) && _temp.length) {
@@ -44,13 +39,11 @@ async function search(
 	query: string
 ): Promise<DoujindesuSearch[] | errorHandling> {
 	try {
-		const { data } = await _Axios
-			.get(DoujindesuBaseUrl, {
-				params: {
-					s: query,
-				},
-			})
-			.catch((e: any) => e?.response);
+		const { data } = await Axios.get(DoujindesuBaseUrl, {
+			params: {
+				s: query,
+			},
+		}).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
 		const _temp: any[] = [];
 		$(".entries > .entry").each((i: number, e: Element) => {
@@ -60,9 +53,7 @@ async function search(
 			const score: string = $(e).find(".score").text().trim();
 			const status: string = $(e).find(".status").text().trim();
 			const url: string = DoujindesuBaseUrl + $(e).find("a").attr("href");
-			const tags: string | any =
-				$(e).attr("data-tags")?.split("|")?.join(", ") || "";
-			_temp.push({ title, thumbnail, type, score, status, url, tags });
+			_temp.push({ title, thumbnail, type, score, status, url });
 		});
 		if (Array.isArray(_temp) && _temp.length) {
 			return _temp;
@@ -81,7 +72,7 @@ async function detail(url: string): Promise<DoujindesuDetail | errorHandling> {
 		};
 	}
 	try {
-		const { data } = await _Axios.get(url).catch((e: any) => e?.response);
+		const { data } = await Axios.get(url).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
 
 		const title: string = $(".thumbnail > a > img").attr("title").trim();
@@ -90,7 +81,7 @@ async function detail(url: string): Promise<DoujindesuDetail | errorHandling> {
 
 		const _metaData: any[] = [];
 		$(".metadata > table > tbody > tr").each((i: number, e: Element) => {
-			const rowD: Element = $(e).find("td");
+			const rowD: any = $(e).find("td");
 			const rowA: any[] = [];
 			rowD.each((_i: number, _e: Element) => {
 				rowA.push($(_e).text());
