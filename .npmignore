@@ -1,4 +1,4 @@
-.eslintrc*
+.eslintrc.json
 node_modules
 src
 scripts
