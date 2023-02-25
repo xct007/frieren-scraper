@@ -7,7 +7,7 @@ import {
 	errorHandling,
 } from "../Types";
 // wkwk
-class KOMIKU_ID {
+export class komikuId {
 	private static _failed = {
 		latest: `failed to get latest data from ${KomikuIdBaseUrl}`,
 		detail: `failed to get detail data from ${KomikuIdBaseUrl}`,
@@ -302,12 +302,3 @@ class KOMIKU_ID {
 		}
 	}
 }
-export const komikuId: {
-	latest: Function;
-	detail: Function;
-	search: Function;
-} = {
-	latest: KOMIKU_ID.latest,
-	detail: KOMIKU_ID.detail,
-	search: KOMIKU_ID.search,
-};
