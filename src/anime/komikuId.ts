@@ -8,151 +8,81 @@ import {
 } from "../Types";
 // wkwk
 class KOMIKU_ID {
-	private _failed: {
-		latest: string;
-		detail: string;
-		search: string;
+	private static _failed = {
+		latest: `failed to get latest data from ${KomikuIdBaseUrl}`,
+		detail: `failed to get detail data from ${KomikuIdBaseUrl}`,
+		search: `failed to get search data from ${KomikuIdBaseUrl}`,
 	};
-	private _latestLoader: {
-		base: string;
-		titleLoader: string;
-		updatedLoader: string;
-		chapterLoader: string;
+	private static _latestLoader = {
+		base: "#Terbaru > .ls4w > article.ls4",
+		titleLoader: "h4 > a",
+		updatedLoader: "span.ls4s",
+		chapterLoader: "a.ls24",
 		urlLoader: {
-			base: string;
-			attribute: string;
-		};
+			base: "h4 > a",
+			attribute: "href",
+		},
 		thumbnailLoader: {
-			base: string;
-			attribute: string;
-		};
+			base: "a > img",
+			attribute: "data-src",
+		},
 	};
-	private _detailLoader: {
+	private static _detailLoader = {
 		manga: {
 			titleLoader: {
-				title: string;
-			};
-			descriptionLoader: string;
+				title: "h1[itemprop='name']",
+			},
+			descriptionLoader: "p.desc",
 			thumbnailLoader: {
-				base: string;
-				attribute: string;
-			};
+				base: ".ims > img",
+				attribute: "src",
+			},
 			metadataLoader: {
-				firstChild: string;
-				secondChild: string;
-			};
+				firstChild: "div.new1 > a > span",
+				secondChild: "table.inftable > tbody > tr > td",
+			},
 			genresLoader: {
-				base: string;
-			};
+				base: "ul.genre > li > a",
+			},
 			chaptersLoader: {
-				base: string;
-				chapter: string;
+				base: "table#Daftar_Chapter > tbody > tr > td > a",
+				chapter: "span",
 				url: {
-					attribute: string;
-				};
-			};
-		};
+					attribute: "href",
+				},
+			},
+		},
 		chapter: {
 			titleLoader: {
-				title: string;
-			};
+				title: "#Judul > h1",
+			},
 			imagesLoader: {
-				base: string;
-				attribute: string;
-			};
-		};
+				base: "#Baca_Komik > img",
+				attribute: "src",
+			},
+		},
 	};
-	private _searchLoader: {
-		base: string;
+	private static _searchLoader = {
+		base: ".daftar > .bge",
 		titleLoader: {
-			title: string;
-			title_id: string;
-		};
-		descriptionLoader: string;
+			title: ".kan > a > h3",
+			title_id: ".kan span.judul2",
+		},
+		descriptionLoader: ".kan > p",
 		thumbnailLoader: {
-			base: string;
-			attribute: string;
-		};
+			base: ".bgei > a > img",
+			attribute: "data-src",
+		},
 		urlLoader: {
-			base: string;
-			attribute: string;
-		};
-		metadataLoader: string;
+			base: ".bgei > a",
+			attribute: "href",
+		},
+		metadataLoader: ".new1 > a > span",
 	};
-	constructor() {
-		this._failed = {
-			latest: `failed to get latest data from ${KomikuIdBaseUrl}`,
-			detail: `failed to get detail data from ${KomikuIdBaseUrl}`,
-			search: `failed to get search data from ${KomikuIdBaseUrl}`,
-		};
-		this._latestLoader = {
-			base: "#Terbaru > .ls4w > article.ls4",
-			titleLoader: "h4 > a",
-			updatedLoader: "span.ls4s",
-			chapterLoader: "a.ls24",
-			urlLoader: {
-				base: "h4 > a",
-				attribute: "href",
-			},
-			thumbnailLoader: {
-				base: "a > img",
-				attribute: "data-src",
-			},
-		};
-		this._detailLoader = {
-			manga: {
-				titleLoader: {
-					title: "h1[itemprop='name']",
-				},
-				descriptionLoader: "p.desc",
-				thumbnailLoader: {
-					base: ".ims > img",
-					attribute: "src",
-				},
-				metadataLoader: {
-					firstChild: "div.new1 > a > span",
-					secondChild: "table.inftable > tbody > tr > td",
-				},
-				genresLoader: {
-					base: "ul.genre > li > a",
-				},
-				chaptersLoader: {
-					base: "table#Daftar_Chapter > tbody > tr > td > a",
-					chapter: "span",
-					url: {
-						attribute: "href",
-					},
-				},
-			},
-			chapter: {
-				titleLoader: {
-					title: "#Judul > h1",
-				},
-				imagesLoader: {
-					base: "#Baca_Komik > img",
-					attribute: "src",
-				},
-			},
-		};
-		this._searchLoader = {
-			base: ".daftar > .bge",
-			titleLoader: {
-				title: ".kan > a > h3",
-				title_id: ".kan span.judul2",
-			},
-			descriptionLoader: ".kan > p",
-			thumbnailLoader: {
-				base: ".bgei > a > img",
-				attribute: "data-src",
-			},
-			urlLoader: {
-				base: ".bgei > a",
-				attribute: "href",
-			},
-			metadataLoader: ".new1 > a > span",
-		};
-	}
-	public async latest(): Promise<KomikuIdLatestResults[] | errorHandling> {
+	private constructor() {}
+	public static async latest(): Promise<
+		KomikuIdLatestResults[] | errorHandling
+	> {
 		try {
 			const { data } = await Axios.get(KomikuIdBaseUrl, {}).catch(
 				(e: any) => e?.response
@@ -193,7 +123,7 @@ class KOMIKU_ID {
 			};
 		}
 	}
-	public async detail(
+	public static async detail(
 		url: string
 	): Promise<
 		| KomikuIdDetailResult["Manga"]
@@ -301,7 +231,7 @@ class KOMIKU_ID {
 			};
 		}
 	}
-	public async search(
+	public static async search(
 		query: string
 	): Promise<KomikuIdSearchResults[] | errorHandling> {
 		try {
@@ -372,4 +302,12 @@ class KOMIKU_ID {
 		}
 	}
 }
-export const komikuId = new KOMIKU_ID();
+export const komikuId: {
+	latest: Function;
+	detail: Function;
+	search: Function;
+} = {
+	latest: KOMIKU_ID.latest,
+	detail: KOMIKU_ID.detail,
+	search: KOMIKU_ID.search,
+};

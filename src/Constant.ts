@@ -9,3 +9,5 @@ export const StatusWaIndonesiaBaseUrl: string =
 	"https://www.videostatusmarket.com";
 export const UnsplashBaseUrl: string = "https://api.unsplash.com";
 export const InstagramDownloadBaseUrlV1: string = "https://downloadgram.org";
+export const TiktokDownloadRapidApiServer: string =
+	"https://tiktok-video-no-watermark2.p.rapidapi.com";

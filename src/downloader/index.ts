@@ -1,4 +1,5 @@
 import * as youtube from "./youtube";
-import * as statusWa from "./statusWaIndonesia";
+import * as storyWa from "./statusWaIndonesia";
+import * as tiktok from "./tiktok";
 import { instagram } from "./instagram";
-export { youtube, statusWa, instagram };
+export { youtube, storyWa, instagram, tiktok };

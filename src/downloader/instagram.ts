@@ -2,7 +2,7 @@ import { Axios, Cheerio } from "../Utils";
 import { InstagramDownloadBaseUrlV1 } from "../Constant";
 import { InstagramDownloadResults, errorHandling } from "../Types";
 
-export class instagram {
+class Instagrams {
 	constructor() {}
 	public static async v1(
 		url: string
@@ -39,3 +39,8 @@ export class instagram {
 		}
 	}
 }
+export const instagram: {
+	v1: Function;
+} = {
+	v1: Instagrams.v1,
+};
