@@ -1,5 +1,4 @@
 <div align="center">
-  <h1>Swiper no Swiping</h1>
   <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/nickelodeon-dora-the-explorer-swiper-no-swiping-fox-ivof-miaol.jpg"/>
 </div>
 
@@ -59,6 +58,10 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] [v1](https://downloadgram.org)
   - [x] Tiktok
     - [x] v1
+  - [x] Facebook
+    - [x] [v1](https://getmyfb.com)
+  - [x] ZippyShare. [reference](https://github.com/superXdev/zippyshare-downloader)
+    - [x] download
 - [ ] Searching
   - [x] Unsplash
     - [x] search
@@ -69,11 +72,13 @@ You decide, you can open issues what website/app and data to be scrapped.
 
 #### Install packages.
 
+NPM version not working
+
 ```bash
 yarn add frieren-scraper
 ```
 
-or using GitHub version to get latest fix/update.
+Using GitHub version to get latest fix/update.
 
 ```bash
 yarn add github:xct007/frieren-scraper
@@ -120,7 +125,19 @@ console.log(Obj);
 // others version will added soon.
 ```
 
-- Story WhatsApp Videos.
+#### Facebook.
+
+```js
+import { facebook } from "frieren-scraper";
+
+// v1
+const Obj = await facebook.v1("https://FACEBOOK_URL");
+console.log(Obj)
+
+// others version will added soon.
+```
+
+#### Story WhatsApp Videos.
 
 ```js
 import { storyWa } from "frieren-scraper";
@@ -132,6 +149,17 @@ console.log(ArrObj)
 // search videos by query
 const ArrObj = await storyWa.search("query");
 console.log(ArrObj)
+
+```
+
+#### ZippyShare.
+
+```js
+import { zippyshare } from "frieren-scraper";
+
+// fetch direct download url
+const Obj = await zippyshare.download("https://ZIPPYSHARE_URL");
+console.log(Obj)
 
 ```
 
@@ -237,7 +265,5 @@ console.log(ArrObj)
 
 
 ### Note.
-
-For all swiper.
 
 This repository project is a learning exercise, and as such it utilizes references from other open source repositories. No commercial use is intended, and all efforts have been made to ensure proper attribution has been given to any referenced libraries and code.
