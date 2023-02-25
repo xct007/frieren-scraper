@@ -27,6 +27,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Youtube
   - [x] Anoboy
   - [x] Komiku.id
+  - [ ] Danbooru
 - App
   - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
@@ -67,6 +68,8 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [ ] Searching
   - [x] Unsplash
     - [x] search
+  - [ ] Danbooru
+    - [ ] search
 
 ## Usage
 
@@ -95,8 +98,8 @@ const ArrObj = await youtube.search("rose gone mv");
 console.log(ArrObj);
 
 // fetch download url;
-const ArrObj = await youtube.download("https://www.youtube.com/watch?v=xxx");
-console.log(ArrObj);
+const Obj = await youtube.download("https://www.youtube.com/watch?v=xxx");
+console.log(Obj);
 ```
 
 #### Tiktok
@@ -105,8 +108,8 @@ console.log(ArrObj);
 import { tiktok } from "frieren-scraper";
 
 // v1
-const ArrObj = await tiktok.v1("https://TIKTOK_URL");
-console.log(ArrObj);
+const Obj = await tiktok.v1("https://TIKTOK_URL");
+console.log(Obj);
 
 // others version will added soon.
 ```
@@ -117,8 +120,8 @@ console.log(ArrObj);
 import { instagram } from "frieren-scraper";
 
 // v1
-const ArrObj = await instagram.v1("https://instagram_URL");
-console.log(ArrObj);
+const Obj = await instagram.v1("https://instagram_URL");
+console.log(Obj);
 
 // others version will added soon.
 ```
@@ -193,6 +196,25 @@ console.log(ArrObj)
 
 // fetch anime detail by url
 const ArrObj = await anoboy.search("https://ANOBOY_URL");
+console.log(ArrObj)
+
+```
+
+#### Doujindesu.
+
+```js
+import { doujindesu } from "frieren-scraper";
+
+// fetch latest doujin
+const ArrObj = await doujindesu.latest()
+console.log(ArrObj)
+
+// search doujin by query
+const ArrObj = await doujindesu.search("query");
+console.log(ArrObj)
+
+// fetch doujin detail by url
+const ArrObj = await doujindesu.search("https://DOUJINDESU_URL");
 console.log(ArrObj)
 
 ```
