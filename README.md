@@ -5,7 +5,9 @@
 
 ### Note.
 
-for all swiper, please don't sell any code from this repository project or implement it to your rest APIs and make people pay for it.
+For all swiper.
+
+This repository project is a learning exercise, and as such it utilizes references from other open source repositories. No commercial use is intended, and all efforts have been made to ensure proper attribution has been given to any referenced libraries and code.
 
 ### Challenge
 
@@ -70,7 +72,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 
 ### Test build
 
-- Install packages.
+#### Install packages.
 
 ```bash
 yarn add github:xct007/frieren-scraper
@@ -78,7 +80,7 @@ yarn add github:xct007/frieren-scraper
 
 ### Social Media.
 
-- Youtube
+#### Youtube
 
 ```js
 import { youtube } from "frieren-scraper";
@@ -92,7 +94,7 @@ const ArrObj = await youtube.download("https://www.youtube.com/watch?v=xxx");
 console.log(ArrObj);
 ```
 
-- Tiktok
+#### Tiktok
 
 ```js
 import { tiktok } from "frieren-scraper";
@@ -104,7 +106,7 @@ console.log(ArrObj);
 // others version will added soon.
 ```
 
-- Instagram
+#### Instagram
 
 ```js
 import { instagram } from "frieren-scraper";
@@ -133,7 +135,7 @@ console.log(ArrObj)
 
 ### Anime/comic.
 
-- Komiku.id.
+#### Komiku.id.
 
 ```js
 import { komikuId } from "frieren-scraper";
@@ -152,7 +154,7 @@ console.log(ArrObj)
 
 ```
 
-- Otakudesu.
+#### Otakudesu.
 
 ```js
 import { otakudesu } from "frieren-scraper";
@@ -171,7 +173,7 @@ console.log(ArrObj)
 
 ```
 
-- Anoboy.
+#### Anoboy.
 
 ```js
 import { anoboy } from "frieren-scraper";
@@ -192,7 +194,7 @@ console.log(ArrObj)
 
 ### Searching?
 
-- Unsplash.
+#### Unsplash.
 
 ```js
 import { unsplash } from "frieren-scraper";
