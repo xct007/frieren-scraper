@@ -85,6 +85,7 @@ yarn add github:xct007/frieren-scraper
 ```
 
 ## Example use
+
 ### Social Media.
 
 #### Youtube
@@ -132,7 +133,7 @@ import { facebook } from "frieren-scraper";
 
 // v1
 const Obj = await facebook.v1("https://FACEBOOK_URL");
-console.log(Obj)
+console.log(Obj);
 
 // others version will added soon.
 ```
@@ -144,12 +145,11 @@ import { storyWa } from "frieren-scraper";
 
 // fetch popular videos
 const ArrObj = await storyWa.popular();
-console.log(ArrObj)
+console.log(ArrObj);
 
 // search videos by query
 const ArrObj = await storyWa.search("query");
-console.log(ArrObj)
-
+console.log(ArrObj);
 ```
 
 #### ZippyShare.
@@ -159,8 +159,7 @@ import { zippyshare } from "frieren-scraper";
 
 // fetch direct download url
 const Obj = await zippyshare.download("https://ZIPPYSHARE_URL");
-console.log(Obj)
-
+console.log(Obj);
 ```
 
 ### Anime/comic.
@@ -171,17 +170,16 @@ console.log(Obj)
 import { komikuId } from "frieren-scraper";
 
 // fetch latest comic
-const ArrObj = await komikuId.latest()
-console.log(ArrObj)
+const ArrObj = await komikuId.latest();
+console.log(ArrObj);
 
 // search comic by query
 const ArrObj = await komikuId.search("query");
-console.log(ArrObj)
+console.log(ArrObj);
 
 // fetch comic/chapter detail by url.
 const Obj = await komikuId.detail("https://KOMIKUID_URL");
-console.log(Obj)
-
+console.log(Obj);
 ```
 
 #### Otakudesu.
@@ -190,17 +188,16 @@ console.log(Obj)
 import { otakudesu } from "frieren-scraper";
 
 // fetch latest anime
-const ArrObj = await otakudesu.latest()
-console.log(ArrObj)
+const ArrObj = await otakudesu.latest();
+console.log(ArrObj);
 
 // search anime by query
 const ArrObj = await otakudesu.search("query");
-console.log(ArrObj)
+console.log(ArrObj);
 
 // fetch anime detail by url
 const Obj = await otakudesu.detail("https://OTAKUDESU_URL");
-console.log(Obj)
-
+console.log(Obj);
 ```
 
 #### Anoboy.
@@ -209,17 +206,16 @@ console.log(Obj)
 import { anoboy } from "frieren-scraper";
 
 // fetch latest anime
-const ArrObj = await anoboy.latest()
-console.log(ArrObj)
+const ArrObj = await anoboy.latest();
+console.log(ArrObj);
 
 // search anime by query
 const ArrObj = await anoboy.search("query");
-console.log(ArrObj)
+console.log(ArrObj);
 
 // fetch anime detail by url
 const Obj = await anoboy.search("https://ANOBOY_URL");
-console.log(Obj)
-
+console.log(Obj);
 ```
 
 #### Doujindesu.
@@ -228,17 +224,16 @@ console.log(Obj)
 import { doujindesu } from "frieren-scraper";
 
 // fetch latest doujin
-const ArrObj = await doujindesu.latest()
-console.log(ArrObj)
+const ArrObj = await doujindesu.latest();
+console.log(ArrObj);
 
 // search doujin by query
 const ArrObj = await doujindesu.search("query");
-console.log(ArrObj)
+console.log(ArrObj);
 
 // fetch doujin detail by url
 const Obj = await doujindesu.detail("https://DOUJINDESU_URL");
-console.log(Obj)
-
+console.log(Obj);
 ```
 
 ### Searching?
@@ -250,7 +245,7 @@ import { unsplash } from "frieren-scraper";
 
 // Search images by query
 const ArrObj = await unsplash.search("query");
-console.log(ArrObj)
+console.log(ArrObj);
 ```
 
 #### Danbooru.
@@ -260,9 +255,37 @@ import { danbooru } from "frieren-scraper";
 
 // Search images by query
 const ArrObj = await danbooru.search("query");
-console.log(ArrObj)
+console.log(ArrObj);
 ```
 
+### Error Handling Example.
+
+There is probably no need to use statement try/catch, it is already handle.
+
+```js
+import { youtube } from "frieren-scraper";
+
+youtube.download("YOUTUBE_URL").then((Obj) => {
+  if (Obj.error) {
+    // Error
+    console.log(Obj.message);
+  } else {
+    // ...Your code
+    console.log(Obj);
+  }
+});
+
+// Promise
+const Obj = await youtube.download("YOUTUBE_URL");
+
+if (Obj.error) {
+  // Error
+  console.log(Obj.message);
+} else {
+  // ...Your code.
+  console.log(Obj);
+}
+```
 
 ### Note.
 
