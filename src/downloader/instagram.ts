@@ -1,6 +1,7 @@
 import { Axios, Cheerio } from "../Utils";
 import { InstagramDownloadBaseUrlV1 } from "../Constant";
-import { InstagramDownloadResults, errorHandling } from "../Types";
+import { errorHandling } from "../Interface";
+import { InstagramDownloadResults } from "../Types";
 
 class Instagrams {
 	constructor() {}

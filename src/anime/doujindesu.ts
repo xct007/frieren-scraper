@@ -1,11 +1,7 @@
 import { Axios, Cheerio } from "../Utils";
 import { DoujindesuBaseUrl } from "../Constant";
-import {
-	errorHandling,
-	DoujindesuLatest,
-	DoujindesuSearch,
-	DoujindesuDetail,
-} from "../Types";
+import { errorHandling } from "../Interface";
+import { DoujindesuLatest, DoujindesuSearch, DoujindesuDetail } from "../Types";
 
 async function latest(): Promise<DoujindesuLatest[] | errorHandling> {
 	try {

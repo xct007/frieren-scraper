@@ -1,6 +1,7 @@
 import { Axios, Cheerio } from "../Utils";
 import { AnoboyBaseUrl } from "../Constant";
-import { AnoboyLatest, AnoboyDetail, errorHandling } from "../Types";
+import { errorHandling } from "../Interface";
+import { AnoboyLatest, AnoboyDetail } from "../Types";
 
 async function latest(): Promise<AnoboyLatest[] | errorHandling> {
 	try {

@@ -1,7 +1,3 @@
-export type errorHandling = {
-	error: boolean;
-	message: string;
-};
 export type DoujindesuLatest = {
 	title: string;
 	chapter: string;
@@ -135,4 +131,15 @@ export type TiktokDownloadResult = {
 	wmplay: string;
 	hdplay: string;
 	music: string;
+};
+export type ZippyShareResult = {
+	name?: string;
+	size?: string;
+	uploaded?: string;
+	url: string;
+};
+export type FacebookDownloadResult = {
+	title: string;
+	isHdAvailable: boolean;
+	urls: { sd?: string; hd?: string }[];
 };

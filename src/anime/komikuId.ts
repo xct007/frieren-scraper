@@ -1,10 +1,10 @@
 import { Axios, Cheerio } from "../Utils";
 import { KomikuIdBaseUrl } from "../Constant";
+import { errorHandling } from "../Interface";
 import {
 	KomikuIdLatestResults,
 	KomikuIdDetailResult,
 	KomikuIdSearchResults,
-	errorHandling,
 } from "../Types";
 // wkwk
 export class komikuId {

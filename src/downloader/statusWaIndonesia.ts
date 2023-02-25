@@ -1,6 +1,7 @@
 import { Axios } from "../Utils";
 import { StatusWaIndonesiaBaseUrl } from "../Constant";
-import { StatusWaIndonesiaAny, errorHandling } from "../Types";
+import { errorHandling } from "../Interface";
+import { StatusWaIndonesiaAny } from "../Types";
 
 async function popular(
 	page: string = "1",

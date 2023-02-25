@@ -1,6 +1,7 @@
 import { Axios } from "../Utils";
 import { UnsplashBaseUrl } from "../Constant";
-import { UnsplashSearchResults, errorHandling } from "../Types";
+import { errorHandling } from "../Interface";
+import { UnsplashSearchResults } from "../Types";
 
 async function search(
 	query: string,

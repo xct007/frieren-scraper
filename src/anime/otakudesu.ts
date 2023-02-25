@@ -1,11 +1,7 @@
 import { Cheerio, Axios } from "../Utils";
 import { OtakudesuBaseUrl } from "../Constant";
-import {
-	errorHandling,
-	OtakudesuLatest,
-	OtakudesuSearch,
-	OtakudesuDetail,
-} from "../Types";
+import { errorHandling } from "../Interface";
+import { OtakudesuLatest, OtakudesuSearch, OtakudesuDetail } from "../Types";
 
 async function latest(): Promise<OtakudesuLatest[] | errorHandling> {
 	try {

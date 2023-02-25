@@ -1,6 +1,7 @@
 import { Axios } from "../Utils";
 import { TiktokDownloadRapidApiServer } from "../Constant";
-import { TiktokDownloadResult, errorHandling } from "../Types";
+import { errorHandling } from "../Interface";
+import { TiktokDownloadResult } from "../Types";
 
 function RapidApiInit(url: string): {
 	headers: {

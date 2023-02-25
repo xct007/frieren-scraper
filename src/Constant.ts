@@ -12,3 +12,6 @@ export const InstagramDownloadBaseUrlV1: string = "https://downloadgram.org";
 export const TiktokDownloadRapidApiServer: string =
 	"https://tiktok-video-no-watermark2.p.rapidapi.com";
 export const DanbooruBaseUrl: string = "https://danbooru.donmai.us";
+export const FacebookDownloadBaseUrls: { v1: string } = {
+	v1: "https://getmyfb.com",
+};

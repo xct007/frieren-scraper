@@ -1,6 +1,6 @@
 import { Axios, Cheerio } from "../Utils";
 import { DanbooruBaseUrl } from "../Constant";
-import { errorHandling } from "../Types";
+import { errorHandling } from "../Interface";
 
 async function getUrlSearchQuery(
 	query: string

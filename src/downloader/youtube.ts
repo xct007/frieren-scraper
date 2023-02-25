@@ -1,10 +1,7 @@
 import { Axios, Cheerio } from "../Utils";
 import { YoutubeSearchBaseUrl, YoutubeDownloadBaseUrl } from "../Constant";
-import {
-	YoutubeSearchResult,
-	YoutubeDownloadResult,
-	errorHandling,
-} from "../Types";
+import { errorHandling } from "../Interface";
+import { YoutubeSearchResult, YoutubeDownloadResult } from "../Types";
 
 async function search(
 	query: string
