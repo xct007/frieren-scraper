@@ -200,13 +200,3 @@ import { unsplash } from "frieren-scraper";
 // Search images by query
 const ArrObj = await unsplash.search("query");
 ```
-
-## Disclaimer
-
-This software and related material (the “Software”) are protected by copyright, patent, trade secret and other intellectual property laws. The Software is licensed, not sold. By accessing, downloading, or using this Software, you agree to comply with the intellectual property laws and all other applicable laws of the jurisdiction in which you are accessing, downloading, or using the Software. These laws may include restrictions on use, copying, redistributing, disclosing, modifying or transfer of the Software. Any attempt to reverse engineer, decompile, disassemble, alter or modify the Software or any part thereof is expressly forbidden. We reserve all rights not expressly granted to you and no other rights are implied.
-
-The MIT License grants a person or entity certain rights to use the Software that are subject to certain conditions. If you do not agree to all of the conditions of the License, then you may not use the Software. However, if the conditions of the License are satisfied then you may use the Software under the MIT License.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-This Disclaimer is not intended to and does not override or limit any rights provided to you by the MIT License.
