@@ -70,14 +70,19 @@ You decide, you can open issues what website/app and data to be scrapped.
 
 ## Usage
 
-### Test build
-
 #### Install packages.
+
+```bash
+yarn add frieren-scraper
+```
+
+or using GitHub version.
 
 ```bash
 yarn add github:xct007/frieren-scraper
 ```
 
+## Example use
 ### Social Media.
 
 #### Youtube
