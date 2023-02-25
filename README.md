@@ -3,12 +3,6 @@
   <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/nickelodeon-dora-the-explorer-swiper-no-swiping-fox-ivof-miaol.jpg"/>
 </div>
 
-### Note.
-
-For all swiper.
-
-This repository project is a learning exercise, and as such it utilizes references from other open source repositories. No commercial use is intended, and all efforts have been made to ensure proper attribution has been given to any referenced libraries and code.
-
 ### Challenge
 
 - Scrape only using
@@ -27,7 +21,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Youtube
   - [x] Anoboy
   - [x] Komiku.id
-  - [ ] Danbooru
+  - [x] Danbooru
 - App
   - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
@@ -68,8 +62,8 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [ ] Searching
   - [x] Unsplash
     - [x] search
-  - [ ] Danbooru
-    - [ ] search
+  - [x] Danbooru
+    - [x] search
 
 ## Usage
 
@@ -79,7 +73,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 yarn add frieren-scraper
 ```
 
-or using GitHub version.
+or using GitHub version to get latest fix/update.
 
 ```bash
 yarn add github:xct007/frieren-scraper
@@ -228,4 +222,22 @@ import { unsplash } from "frieren-scraper";
 
 // Search images by query
 const ArrObj = await unsplash.search("query");
+console.log(ArrObj)
 ```
+
+#### Danbooru.
+
+```js
+import { danbooru } from "frieren-scraper";
+
+// Search images by query
+const ArrObj = await danbooru.search("query");
+console.log(ArrObj)
+```
+
+
+### Note.
+
+For all swiper.
+
+This repository project is a learning exercise, and as such it utilizes references from other open source repositories. No commercial use is intended, and all efforts have been made to ensure proper attribution has been given to any referenced libraries and code.
