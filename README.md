@@ -124,11 +124,11 @@ console.log(ArrObj);
 import { storyWa } from "frieren-scraper";
 
 // fetch popular videos
-const ArrObj = await storyWa.popular()'
+const ArrObj = await storyWa.popular();
 console.log(ArrObj)
 
 // search videos by query
-const ArrObj = await storyWa.search("query")'
+const ArrObj = await storyWa.search("query");
 console.log(ArrObj)
 
 ```
@@ -145,11 +145,11 @@ const ArrObj = await komikuId.latest()
 console.log(ArrObj)
 
 // search comic by query
-const ArrObj = await komikuId.search("query")'
+const ArrObj = await komikuId.search("query");
 console.log(ArrObj)
 
 // fetch comic/chapter detail by url.
-const ArrObj = await komikuId.search("https://KOMIKUID_URL")'
+const ArrObj = await komikuId.search("https://KOMIKUID_URL");
 console.log(ArrObj)
 
 ```
@@ -164,11 +164,11 @@ const ArrObj = await otakudesu.latest()
 console.log(ArrObj)
 
 // search anime by query
-const ArrObj = await otakudesu.search("query")'
+const ArrObj = await otakudesu.search("query");
 console.log(ArrObj)
 
 // fetch anime detail by url
-const ArrObj = await otakudesu.search("https://OTAKUDESU_URL")'
+const ArrObj = await otakudesu.search("https://OTAKUDESU_URL");
 console.log(ArrObj)
 
 ```
@@ -183,11 +183,11 @@ const ArrObj = await anoboy.latest()
 console.log(ArrObj)
 
 // search anime by query
-const ArrObj = await anoboy.search("query")'
+const ArrObj = await anoboy.search("query");
 console.log(ArrObj)
 
 // fetch anime detail by url
-const ArrObj = await anoboy.search("https://ANOBOY_URL")'
+const ArrObj = await anoboy.search("https://ANOBOY_URL");
 console.log(ArrObj)
 
 ```
