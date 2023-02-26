@@ -151,3 +151,15 @@ export type MusicApiJamendoResults = {
 	thumbnail: string;
 	audio: string;
 }[];
+export type ApkmodyIoSearchResults = {
+	title: string;
+	description: string;
+	thumbnail: string;
+	url: string;
+}[];
+export type ApkmodyIoDetailResult = {
+	title: string;
+	updated: string;
+	metadata: object;
+	urls: object;
+};
