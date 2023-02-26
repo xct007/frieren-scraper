@@ -26,6 +26,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
   - [x] [Downloader for tiktok](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
     - `App use rapid Api.`
+  - [x] [SuoerDownloader](https://play.google.com/store/apps/details?id=com.music.downloader.downloadid)
 
 ### Progress.
 
@@ -66,6 +67,8 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Unsplash
     - [x] search
   - [x] Danbooru
+    - [x] search
+  - [x] Music
     - [x] search
 
 ## Usage
@@ -255,6 +258,17 @@ import { danbooru } from "frieren-scraper";
 
 // Search images by query
 const ArrObj = await danbooru.search("query");
+console.log(ArrObj);
+```
+
+#### Music.
+
+```js
+import { music } from "frieren-scraper";
+
+// Search music and audio url by query.
+// more short query, more results found.
+const ArrObj = await music.search("query");
 console.log(ArrObj);
 ```
 
