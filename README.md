@@ -21,12 +21,13 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Anoboy
   - [x] Komiku.id
   - [x] Danbooru
+  - [x] Apkmody.io
 - App
   - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
   - [x] [Downloader for tiktok](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
     - `App use rapid Api.`
-  - [x] [SuoerDownloader](https://play.google.com/store/apps/details?id=com.music.downloader.downloadid)
+  - [x] [SuperDownloader](https://play.google.com/store/apps/details?id=com.music.downloader.downloadid)
 
 ### Progress.
 
@@ -70,6 +71,9 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] search
   - [x] Music
     - [x] search
+  - [x] Apkmody
+    - [x] search
+    - [x] detail
 
 ## Usage
 
@@ -270,6 +274,21 @@ import { music } from "frieren-scraper";
 // more short query, more results found.
 const ArrObj = await music.search("query");
 console.log(ArrObj);
+```
+
+#### Apkmody.
+
+```js
+import { apkmody } from "frieren-scraper";
+
+// search apps/games
+const ArrObj = await apkmody.search("query");
+console.log(ArrObj);
+
+// fetch direct download url
+// High memory usage. LOL
+const Obj = await apkmody.download("https://APKMODY_URL");
+console.log(Obj);
 ```
 
 ### Error Handling Example.
