@@ -81,7 +81,7 @@ NPM version not working
 yarn add frieren-scraper
 ```
 
-Using GitHub version to get latest fix/update.
+Using GitHub version to test latest fix/update.
 
 ```bash
 yarn add github:xct007/frieren-scraper
