@@ -116,7 +116,7 @@ console.log(Obj);
 ```js
 import { tiktok } from "frieren-scraper";
 
-// v1
+// v1. fetch detail/download url
 const Obj = await tiktok.v1("https://TIKTOK_URL");
 console.log(Obj);
 
@@ -128,7 +128,7 @@ console.log(Obj);
 ```js
 import { instagram } from "frieren-scraper";
 
-// v1
+// v1. fetch direct download url
 const Obj = await instagram.v1("https://instagram_URL");
 console.log(Obj);
 
@@ -140,7 +140,7 @@ console.log(Obj);
 ```js
 import { facebook } from "frieren-scraper";
 
-// v1
+// v1. fetch direct download url
 const Obj = await facebook.v1("https://FACEBOOK_URL");
 console.log(Obj);
 
@@ -169,6 +169,18 @@ import { zippyshare } from "frieren-scraper";
 // fetch direct download url
 const Obj = await zippyshare.download("https://ZIPPYSHARE_URL");
 console.log(Obj);
+```
+
+#### Pinterest.
+
+```js
+import { pinterest } from "frieren-scraper";
+
+// v1. fetch direct download url
+const Obj = await pinterest.v1("https://PINTEREST_URL");
+console.log(Obj);
+
+// others version will added soon.
 ```
 
 ### Anime/comic.
