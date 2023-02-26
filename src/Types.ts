@@ -163,3 +163,6 @@ export type ApkmodyIoDetailResult = {
 	metadata: object;
 	urls: object;
 };
+export type PinterestDownloadResult = {
+	url: string;
+};

@@ -138,7 +138,7 @@ async function detail(
 		const _extractedUrl: { [key: string]: any } | boolean =
 			await extractDownloadUrl(realDownloadUrl).catch(() => false);
 		if (typeof _extractedUrl === "boolean") {
-			throw new Error(`Failed to extract direct url from ${realDownloadUrl}`)
+			throw new Error(`Failed to extract direct url from ${realDownloadUrl}`);
 		}
 		const _tempDataTable: any[] = [];
 		let metadata: { [key: string]: any } = {};

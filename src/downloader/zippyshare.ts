@@ -2,6 +2,7 @@
  * Reference:
  * @link {https://github.com/superXdev/zippyshare-downloader/blob/main/utils/url.js}
  */
+import https from "https";
 import { Axios, Cheerio } from "../Utils";
 import { errorHandling } from "../Interface";
 import { ZippyShareResult } from "../Types";
@@ -21,7 +22,9 @@ async function download(
 		};
 	}
 	try {
-		const { data } = await Axios.get(url).catch((e: any) => e?.response);
+		const { data } = await Axios.get(url, {
+			httpsAgent: new https.Agent({ keepAlive: true }),
+		}).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
 
 		// Extract url from raw data

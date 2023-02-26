@@ -17,3 +17,6 @@ export const FacebookDownloadBaseUrls: { v1: string } = {
 };
 export const MusicApiJamendoBaseUrl: string = "https://api.jamendo.com";
 export const ApkmodyIoBaseUrl: string = "https://apkmody.io";
+export const PinterestDownloadBaseUrls: { v1: string } = {
+	v1: "https://pinterestvideo.com",
+};
