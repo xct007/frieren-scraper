@@ -59,11 +59,13 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Instagram
     - [x] [v1](https://downloadgram.org)
   - [x] Tiktok
-    - [x] v1
+    - [x] [v1](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
   - [x] Facebook
     - [x] [v1](https://getmyfb.com)
   - [x] ZippyShare. [reference](https://github.com/superXdev/zippyshare-downloader)
     - [x] download
+  - [x] Pinterest
+    - [x] [v1](https://pinterestvideo.com)
 - [ ] Searching
   - [x] Unsplash
     - [x] search
