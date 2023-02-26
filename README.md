@@ -30,7 +30,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 
 ### Progress.
 
-- [ ] Anime
+- [ ] Anime/comic
   - [x] Doujindesu
     - [x] latest
     - [x] search
@@ -47,7 +47,7 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] latest
     - [x] search
     - [x] detail
-- [ ] Downloader
+- [ ] Downloader?
   - [x] Youtube
     - [x] search
       - [x] videos
