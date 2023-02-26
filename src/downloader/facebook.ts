@@ -59,3 +59,4 @@ async function v1(
 		return { error: true, message: String(e) };
 	}
 }
+export { v1 };

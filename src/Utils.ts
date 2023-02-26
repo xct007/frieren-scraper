@@ -1,3 +1,4 @@
+import https from "https";
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import cheerio from "cheerio";
 
@@ -11,6 +12,7 @@ function CreateInstance(
 			"User-Agent": "Frieren-Scraper (0.0.1x)",
 			...headers,
 		},
+		// 		httpsAgent: new https.Agent({ keepAlive: true }),
 		...config,
 	});
 }

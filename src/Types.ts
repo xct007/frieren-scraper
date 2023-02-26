@@ -143,3 +143,11 @@ export type FacebookDownloadResult = {
 	isHdAvailable: boolean;
 	urls: { sd?: string; hd?: string }[];
 };
+export type MusicApiJamendoResults = {
+	title: string;
+	artist: string;
+	album: string;
+	release_date: string;
+	thumbnail: string;
+	audio: string;
+}[];

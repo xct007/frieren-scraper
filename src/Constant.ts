@@ -15,3 +15,4 @@ export const DanbooruBaseUrl: string = "https://danbooru.donmai.us";
 export const FacebookDownloadBaseUrls: { v1: string } = {
 	v1: "https://getmyfb.com",
 };
+export const MusicApiJamendoBaseUrl: string = "https://api.jamendo.com";
