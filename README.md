@@ -102,7 +102,7 @@ yarn add github:xct007/frieren-scraper
 #### Youtube
 
 ```js
-import { youtube } from "xct007/frieren-scraper";
+import { youtube } from "@xct007/frieren-scraper";
 
 // searching videos
 const ArrObj = await youtube.search("rose gone mv");
@@ -116,7 +116,7 @@ console.log(Obj);
 #### Tiktok
 
 ```js
-import { tiktok } from "xct007/frieren-scraper";
+import { tiktok } from "@xct007/frieren-scraper";
 
 // v1. fetch detail/download url
 const Obj = await tiktok.v1("https://TIKTOK_URL");
@@ -128,7 +128,7 @@ console.log(Obj);
 #### Instagram
 
 ```js
-import { instagram } from "xct007/frieren-scraper";
+import { instagram } from "@xct007/frieren-scraper";
 
 // v1. fetch direct download url
 const Obj = await instagram.v1("https://instagram_URL");
@@ -140,7 +140,7 @@ console.log(Obj);
 #### Facebook.
 
 ```js
-import { facebook } from "xct007/frieren-scraper";
+import { facebook } from "@xct007/frieren-scraper";
 
 // v1. fetch direct download url
 const Obj = await facebook.v1("https://FACEBOOK_URL");
@@ -152,7 +152,7 @@ console.log(Obj);
 #### Story WhatsApp Videos.
 
 ```js
-import { storyWa } from "xct007/frieren-scraper";
+import { storyWa } from "@xct007/frieren-scraper";
 
 // fetch popular videos
 const ArrObj = await storyWa.popular();
@@ -166,7 +166,7 @@ console.log(ArrObj);
 #### ZippyShare.
 
 ```js
-import { zippyshare } from "xct007/frieren-scraper";
+import { zippyshare } from "@xct007/frieren-scraper";
 
 // fetch direct download url
 const Obj = await zippyshare.download("https://ZIPPYSHARE_URL");
@@ -176,7 +176,7 @@ console.log(Obj);
 #### Pinterest.
 
 ```js
-import { pinterest } from "xct007/frieren-scraper";
+import { pinterest } from "@xct007/frieren-scraper";
 
 // v1. fetch direct download url
 const Obj = await pinterest.v1("https://PINTEREST_URL");
@@ -190,7 +190,7 @@ console.log(Obj);
 #### Komiku.id.
 
 ```js
-import { komikuId } from "xct007/frieren-scraper";
+import { komikuId } from "@xct007/frieren-scraper";
 
 // fetch latest comic
 const ArrObj = await komikuId.latest();
@@ -208,7 +208,7 @@ console.log(Obj);
 #### Otakudesu.
 
 ```js
-import { otakudesu } from "xct007/frieren-scraper";
+import { otakudesu } from "@xct007/frieren-scraper";
 
 // fetch latest anime
 const ArrObj = await otakudesu.latest();
@@ -226,7 +226,7 @@ console.log(Obj);
 #### Anoboy.
 
 ```js
-import { anoboy } from "xct007/frieren-scraper";
+import { anoboy } from "@xct007/frieren-scraper";
 
 // fetch latest anime
 const ArrObj = await anoboy.latest();
@@ -244,7 +244,7 @@ console.log(Obj);
 #### Doujindesu.
 
 ```js
-import { doujindesu } from "xct007/frieren-scraper";
+import { doujindesu } from "@xct007/frieren-scraper";
 
 // fetch latest doujin
 const ArrObj = await doujindesu.latest();
@@ -264,7 +264,7 @@ console.log(Obj);
 #### Unsplash.
 
 ```js
-import { unsplash } from "xct007/frieren-scraper";
+import { unsplash } from "@xct007/frieren-scraper";
 
 // Search images by query
 const ArrObj = await unsplash.search("query");
@@ -274,7 +274,7 @@ console.log(ArrObj);
 #### Danbooru.
 
 ```js
-import { danbooru } from "xct007/frieren-scraper";
+import { danbooru } from "@xct007/frieren-scraper";
 
 // Search images by query
 const ArrObj = await danbooru.search("query");
@@ -284,7 +284,7 @@ console.log(ArrObj);
 #### Music.
 
 ```js
-import { music } from "xct007/frieren-scraper";
+import { music } from "@xct007/frieren-scraper";
 
 // Search music and audio url by query.
 // more short query, more results found.
@@ -295,7 +295,7 @@ console.log(ArrObj);
 #### Apkmody.
 
 ```js
-import { apkmody } from "xct007/frieren-scraper";
+import { apkmody } from "@xct007/frieren-scraper";
 
 // search apps/games
 const ArrObj = await apkmody.search("query");
@@ -312,7 +312,7 @@ console.log(Obj);
 #### PhotoFunia.
 
 ```js
-import { photofunia } from "xct007/frieren-scraper";
+import { photofunia } from "@xct007/frieren-scraper";
 
 // get list all effects key.
 const ArrObj = await photofunia.listEffects();
@@ -340,7 +340,7 @@ console.log(Obj);
 There is probably no need to use statement try/catch, it is already handle.
 
 ```js
-import { youtube } from "xct007/frieren-scraper";
+import { youtube } from "@xct007/frieren-scraper";
 
 youtube.download("YOUTUBE_URL").then((Obj) => {
   if (Obj.error) {
