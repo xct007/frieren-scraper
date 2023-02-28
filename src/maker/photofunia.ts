@@ -29,9 +29,7 @@ async function create(
 	opts: { type: string; input: string }
 ): Promise<PhotoFuniaCreatedResult | errorHandling> {
 	try {
-		const { data } = await Axios.post(PrivateApiPhotoFunia, opts, {
-			url: "/createRequest/" + name,
-		}).catch((e: any) => e?.response);
+		const { data } = await Axios.post(PrivateApiPhotoFunia + "/createRequest/" + name, opts).catch((e: any) => e?.response);
 		if (typeof data === "object") {
 			return data;
 		} else {
