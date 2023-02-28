@@ -22,6 +22,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Komiku.id
   - [x] Danbooru
   - [x] Apkmody.io
+  - [x] PhotoFunia
 - App
   - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
@@ -76,6 +77,13 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Apkmody
     - [x] search
     - [x] detail
+- [ ] Maker
+  - [x] PhotoFunia
+    - [x] text
+      - [x] 1 param.
+      - [ ] 2 param
+    - [x] image
+      - [x] Buffer
 
 ## Usage
 
@@ -296,6 +304,36 @@ console.log(ArrObj);
 // fetch direct download url
 // High memory usage. LOL
 const Obj = await apkmody.download("https://APKMODY_URL");
+console.log(Obj);
+```
+
+### Maker.
+
+#### PhotoFunia.
+
+#### Apkmody.
+
+```js
+import { photofunia } from "xct007/frieren-scraper";
+
+// get list all effects key.
+const ArrObj = await photofunia.listEffects();
+console.log(ArrObj);
+
+// Generate text on image by key
+const key = "balloon".
+const Obj = await photofunia.create(key, {
+  type: "text", // pass as text.
+  input: "Text should generate"
+});
+console.log(Obj);
+
+// Image filter
+const key = "the-frame".
+const Obj = await photofunia.create(key, {
+  type: "image", // pass as text.
+  input: fs.readFileSync("./path_image.jpg") // LOL af
+});
 console.log(Obj);
 ```
 
