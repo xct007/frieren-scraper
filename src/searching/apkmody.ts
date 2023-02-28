@@ -2,7 +2,10 @@ import { Axios, Cheerio } from "../Utils";
 import { ApkmodyIoBaseUrl } from "../Constant";
 import { errorHandling } from "../Interface";
 import { ApkmodyIoSearchResults, ApkmodyIoDetailResult } from "../Types";
-
+/*
+class ApkModyIo {
+	private static ()
+}*/
 async function search(
 	query: string
 ): Promise<ApkmodyIoSearchResults[] | errorHandling> {
@@ -153,7 +156,7 @@ async function detail(
 				$(e).find("td > a").attr("href") || $(e).find("td").text().trim();
 			if (_key && _key.length && _value && _value.length) {
 				if (
-					/\apps\/|\/games\/|\/publisher\//.test(_value) &&
+					/\/apps\/|\/games\/|\/publisher\//.test(_value) &&
 					!/\/play.google.com\//.test(_value)
 				) {
 					_value = ApkmodyIoBaseUrl + _value;
