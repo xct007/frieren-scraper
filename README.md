@@ -311,8 +311,6 @@ console.log(Obj);
 
 #### PhotoFunia.
 
-#### Apkmody.
-
 ```js
 import { photofunia } from "xct007/frieren-scraper";
 
