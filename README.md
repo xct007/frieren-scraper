@@ -329,7 +329,7 @@ console.log(Obj);
 // Image filter
 const key = "the-frame".
 const Obj = await photofunia.create(key, {
-  type: "image", // pass as text.
+  type: "image", // pass as image.
   input: fs.readFileSync("./path_image.jpg") // LOL af
 });
 console.log(Obj);
