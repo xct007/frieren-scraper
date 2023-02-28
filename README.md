@@ -95,6 +95,10 @@ Using GitHub version to test latest fix/update.
 yarn add github:xct007/frieren-scraper
 ```
 
+### Notice.
+
+Package name changed to `@xct007/frieren-scraper`
+
 ## Example use
 
 ### Social Media.
