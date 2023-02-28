@@ -1,5 +1,5 @@
 {
-  "name": "frieren-scraper",
+  "name": "@xct007/frieren-scraper",
   "version": "0.0.1",
   "description": "Frieren-scraper.",
   "exports": {
