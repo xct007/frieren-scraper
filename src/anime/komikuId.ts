@@ -7,7 +7,7 @@ import {
 	KomikuIdSearchResults,
 } from "../Types";
 // wkwk
-export class komikuId {
+class komiku {
 	private static _failed = {
 		latest: `failed to get latest data from ${KomikuIdBaseUrl}`,
 		detail: `failed to get detail data from ${KomikuIdBaseUrl}`,
@@ -89,20 +89,22 @@ export class komikuId {
 			);
 			const $ = Cheerio(data);
 			const _temp: any[] = [];
-			$(this._latestLoader.base).each((i: number, e: Element) => {
-				const title: string = $(e).find(this._latestLoader.titleLoader).text();
+			$(komiku._latestLoader.base).each((i: number, e: Element) => {
+				const title: string = $(e)
+					.find(komiku._latestLoader.titleLoader)
+					.text();
 				const updated: string = $(e)
-					.find(this._latestLoader.updatedLoader)
+					.find(komiku._latestLoader.updatedLoader)
 					.text();
 				const chapter: string = $(e)
-					.find(this._latestLoader.chapterLoader)
+					.find(komiku._latestLoader.chapterLoader)
 					.text();
 				let url: string = $(e)
-					.find(this._latestLoader.urlLoader.base)
-					.attr(this._latestLoader.urlLoader.attribute);
+					.find(komiku._latestLoader.urlLoader.base)
+					.attr(komiku._latestLoader.urlLoader.attribute);
 				const thumbnail: string = $(e)
-					.find(this._latestLoader.thumbnailLoader.base)
-					.attr(this._latestLoader.thumbnailLoader.attribute)
+					.find(komiku._latestLoader.thumbnailLoader.base)
+					.attr(komiku._latestLoader.thumbnailLoader.attribute)
 					.replace(/\?.*$/, "");
 				if (url.startsWith("http")) {
 					url = url;
@@ -114,7 +116,7 @@ export class komikuId {
 			if (Array.isArray(_temp) && _temp.length) {
 				return _temp;
 			} else {
-				throw new Error(this._failed.latest);
+				throw new Error(komiku._failed.latest);
 			}
 		} catch (e: any) {
 			return {
@@ -137,20 +139,20 @@ export class komikuId {
 			const { data } = await Axios.get(url).catch((e: any) => e?.response);
 			const $ = Cheerio(data);
 			if (/\/manga\//i.test(url)) {
-				const title: string = $(this._detailLoader.manga.titleLoader.title)
+				const title: string = $(komiku._detailLoader.manga.titleLoader.title)
 					.text()
 					.trim();
 				const description: string = $(
-					this._detailLoader.manga.descriptionLoader
+					komiku._detailLoader.manga.descriptionLoader
 				)
 					.text()
 					.trim();
 				const thumbnail: string = $(
-					this._detailLoader.manga.thumbnailLoader.base
-				).attr(this._detailLoader.manga.thumbnailLoader.attribute);
+					komiku._detailLoader.manga.thumbnailLoader.base
+				).attr(komiku._detailLoader.manga.thumbnailLoader.attribute);
 				const _tempData: string[] = [];
 				let metadata: { [key: string]: any } = {};
-				$(this._detailLoader.manga.metadataLoader.firstChild).each(
+				$(komiku._detailLoader.manga.metadataLoader.firstChild).each(
 					(i: number, e: Element) => {
 						_tempData.push($(e).text().replace(/:/, "").trim());
 					}
@@ -163,7 +165,7 @@ export class komikuId {
 					}
 				});
 				_tempData.splice(0, _tempData.length);
-				$(this._detailLoader.manga.metadataLoader.secondChild).each(
+				$(komiku._detailLoader.manga.metadataLoader.secondChild).each(
 					(i: number, e: Element) => {
 						_tempData.push($(e).text());
 					}
@@ -176,20 +178,22 @@ export class komikuId {
 					}
 				});
 				const genres: string[] = [];
-				$(this._detailLoader.manga.genresLoader.base).each(
+				$(komiku._detailLoader.manga.genresLoader.base).each(
 					(i: number, e: Element) => {
 						genres.push($(e).text());
 					}
 				);
 				const chapters: { chapter: string; url: string }[] = [];
-				$(this._detailLoader.manga.chaptersLoader.base).each(
+				$(komiku._detailLoader.manga.chaptersLoader.base).each(
 					(i: number, e: Element) => {
 						const chapter: string = $(e)
-							.find(this._detailLoader.manga.chaptersLoader.chapter)
+							.find(komiku._detailLoader.manga.chaptersLoader.chapter)
 							.text();
 						const url: string =
 							KomikuIdBaseUrl +
-							$(e).attr(this._detailLoader.manga.chaptersLoader.url.attribute);
+							$(e).attr(
+								komiku._detailLoader.manga.chaptersLoader.url.attribute
+							);
 						chapters.push({ chapter, url });
 					}
 				);
@@ -202,17 +206,17 @@ export class komikuId {
 				};
 			} else if (/\/ch\//i.test(url)) {
 				const _title: string[] = [];
-				$(this._detailLoader.chapter.titleLoader.title).each(
+				$(komiku._detailLoader.chapter.titleLoader.title).each(
 					(i: number, e: Element) => {
 						_title.push($(e).text());
 					}
 				);
 				const title: string = _title[0].replace(/[\t\n]/g, "").trim();
 				const images: string[] = [];
-				$(this._detailLoader.chapter.imagesLoader.base).each(
+				$(komiku._detailLoader.chapter.imagesLoader.base).each(
 					(i: any, e: Element) => {
 						images.push(
-							$(e).attr(this._detailLoader.chapter.imagesLoader.attribute)
+							$(e).attr(komiku._detailLoader.chapter.imagesLoader.attribute)
 						);
 					}
 				);
@@ -222,7 +226,7 @@ export class komikuId {
 					images,
 				};
 			} else {
-				throw new Error(this._failed.detail);
+				throw new Error(komiku._failed.detail);
 			}
 		} catch (e: any) {
 			return {
@@ -246,30 +250,30 @@ export class komikuId {
 			).catch((e: any) => e?.response);
 			const $ = Cheerio(data);
 			const _temp: any[] = [];
-			$(this._searchLoader.base).each((i: number, e: Element) => {
+			$(komiku._searchLoader.base).each((i: number, e: Element) => {
 				const title: string = $(e)
-					.find(this._searchLoader.titleLoader.title)
+					.find(komiku._searchLoader.titleLoader.title)
 					.text()
 					.trim();
 				const title_id: string = $(e)
-					.find(this._searchLoader.titleLoader.title_id)
+					.find(komiku._searchLoader.titleLoader.title_id)
 					.text()
 					.trim();
 				const description: string = $(e)
-					.find(this._searchLoader.descriptionLoader)
+					.find(komiku._searchLoader.descriptionLoader)
 					.text()
 					.trim();
 				const thumbnail: string = $(e)
-					.find(this._searchLoader.thumbnailLoader.base)
-					.attr(this._searchLoader.thumbnailLoader.attribute)
+					.find(komiku._searchLoader.thumbnailLoader.base)
+					.attr(komiku._searchLoader.thumbnailLoader.attribute)
 					.replace(/\?.*$/, "");
 				const url: string = $(e)
-					.find(this._searchLoader.urlLoader.base)
-					.attr(this._searchLoader.urlLoader.attribute);
+					.find(komiku._searchLoader.urlLoader.base)
+					.attr(komiku._searchLoader.urlLoader.attribute);
 				let metadata: { [key: string]: any } = {};
 				const _tempData: string[] = [];
 				$(e)
-					.find(this._searchLoader.metadataLoader)
+					.find(komiku._searchLoader.metadataLoader)
 					.each((_i: number, _e: Element) => {
 						_tempData.push($(_e).text().replace(/:/, "").trim());
 					});
@@ -292,7 +296,7 @@ export class komikuId {
 			if (Array.isArray(_temp) && _temp.length) {
 				return _temp;
 			} else {
-				throw new Error(this._failed.search);
+				throw new Error(komiku._failed.search);
 			}
 		} catch (e: any) {
 			return {
@@ -302,3 +306,22 @@ export class komikuId {
 		}
 	}
 }
+export const latest = async function (): Promise<
+	KomikuIdLatestResults[] | errorHandling
+> {
+	return await komiku.latest();
+};
+export const search = async function (
+	query: string
+): Promise<KomikuIdSearchResults[] | errorHandling> {
+	return await komiku.search(query);
+};
+export const detail = async function (
+	url: string
+): Promise<
+	| KomikuIdDetailResult["Manga"]
+	| KomikuIdDetailResult["Chapter"]
+	| errorHandling
+> {
+	return await komiku.detail(url);
+};

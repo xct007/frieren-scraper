@@ -166,3 +166,31 @@ export type ApkmodyIoDetailResult = {
 export type PinterestDownloadResult = {
 	url: string;
 };
+export type PhotoFuniaListResults = {
+	title: string;
+	key: string;
+	description: string;
+}[];
+export type PhotoFuniaCreatedResult = {
+	large: {
+		title: string;
+		url: string;
+		format: string;
+		width: number;
+		height: number;
+	};
+	reqular: {
+		title: string;
+		url: string;
+		format: string;
+		width: number;
+		height: number;
+	};
+	small: {
+		title: string;
+		url: string;
+		format: string;
+		width: number;
+		height: number;
+	};
+};

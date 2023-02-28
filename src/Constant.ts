@@ -20,3 +20,4 @@ export const ApkmodyIoBaseUrl: string = "https://apkmody.io";
 export const PinterestDownloadBaseUrls: { v1: string } = {
 	v1: "https://pinterestvideo.com",
 };
+export const PrivateApiPhotoFunia: string = "https://photofunia.itsrose.site";
