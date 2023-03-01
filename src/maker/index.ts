@@ -1,2 +1,2 @@
-import * as photofunia from "./photofunia";
-export { photofunia };
+export * from "./photofunia";
+export * from "./diffusion";

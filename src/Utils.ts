@@ -12,7 +12,6 @@ function CreateInstance(
 			"User-Agent": "Frieren-Scraper (0.0.1x)",
 			...headers,
 		},
-		// 		httpsAgent: new https.Agent({ keepAlive: true }),
 		...config,
 	});
 }

@@ -194,3 +194,10 @@ export type PhotoFuniaCreatedResult = {
 		height: number;
 	};
 };
+export type StableDiffusionResult = {
+	process_time: number;
+	seed: string;
+	ext: string;
+	mimetype: string;
+	base64Img: string;
+};
