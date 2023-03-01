@@ -347,13 +347,33 @@ console.log(Obj);
 
 ```js
 import { diffusion } from "@xct007/frieren-scraper";
+import { writeFileSync } from "fs";
 
-// generate stable diffusion.
+// stable diffusion.
 const prompt = "1girl, blush, looking to viewer, warm smile,";
 const seed = 123456789 // (optional). default random.
 
 const Obj = await diffusion.stable(prompt, seed);
 console.log(Obj);
+/*
+  {
+    process_time: Number,
+    seed: "String",
+    ext: "String",
+    mimetype: "String",
+    base64Img: "String" // encodedBase64
+  }
+*/
+
+// example save to disk
+const saveFilename = `./image.${Obj.ext}`
+
+const base64Data = `data:${Obj.mimetype};base64,${Obj.base64Img}`
+
+const buffer = Buffer.from(base64Data, "base64");
+
+writeFileSync(saveFilename, buffer);
+
 
 // Anime diffusion will be added
 // if this repo star reach >= 50.
