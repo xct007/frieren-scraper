@@ -84,6 +84,9 @@ You decide, you can open issues what website/app and data to be scrapped.
       - [ ] 2 param
     - [x] image
       - [x] Buffer
+  - [x] Image Diffusion.
+    - [x] stable (tensor restAPIs)
+    - [ ] anime (tensor restAPIs)
 
 ## Usage
 
@@ -325,7 +328,7 @@ console.log(ArrObj);
 // Generate text on image by key
 const key = "balloon".
 const Obj = await photofunia.create(key, {
-  type: "text", // pass as text.
+  type: "text", // pass type as text.
   input: "Text should generate"
 });
 console.log(Obj);
@@ -333,10 +336,27 @@ console.log(Obj);
 // Image filter
 const key = "the-frame".
 const Obj = await photofunia.create(key, {
-  type: "image", // pass as image.
+  type: "image", // pass type as image.
+  // input only accept Buffer
   input: fs.readFileSync("./path_image.jpg") // LOL af
 });
 console.log(Obj);
+```
+
+#### Image Diffusion.
+
+```js
+import { diffusion } from "@xct007/frieren-scraper";
+
+// generate stable diffusion.
+const prompt = "1girl, blush, looking to viewer, warm smile,";
+const seed = 123456789 // (optional). default random.
+
+const Obj = await diffusion.stable(prompt, seed);
+console.log(Obj);
+
+// Anime diffusion will be added
+// if this repo star reach >= 50.
 ```
 
 ### Error Handling Example.
