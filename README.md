@@ -1,20 +1,106 @@
 <div align="center">
-  <h1> Scrape module</h1>
   <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/nickelodeon-dora-the-explorer-swiper-no-swiping-fox-ivof-miaol.jpg"/>
 </div>
+
+### Challenge
+
+- Scrape only using
+  - [x] Axios
+  - [x] Cheerio
+
+and results must be JSON Object.
+
+### Target
+
+You decide, you can open issues what website/app and data to be scrapped.
+
+- Website
+  - [x] Doujindesu
+  - [x] Otakudesu
+  - [x] Youtube
+  - [x] Anoboy
+  - [x] Komiku.id
+  - [x] Danbooru
+  - [x] Apkmody.io
+  - [x] PhotoFunia
+- App
+  - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
+  - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
+  - [x] [Downloader for tiktok](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
+    - `App use rapid Api.`
+  - [x] [SuperDownloader](https://play.google.com/store/apps/details?id=com.music.downloader.downloadid)
+
+### Progress.
+
+- [ ] Anime/comic
+  - [x] Doujindesu
+    - [x] latest
+    - [x] search
+    - [x] detail
+  - [x] Otakudesu
+    - [x] latest
+    - [x] search
+    - [x] detail
+  - [x] Anoboy
+    - [x] latest
+    - [x] search
+    - [x] detail
+  - [x] Komiku.id
+    - [x] latest
+    - [x] search
+    - [x] detail
+- [ ] Downloader?
+  - [x] Youtube
+    - [x] search
+      - [x] videos
+    - [x] dowload
+  - [x] Status Video Wa Indonesia
+    - [x] popular
+    - [x] search
+  - [x] Instagram
+    - [x] [v1](https://downloadgram.org)
+  - [x] Tiktok
+    - [x] [v1](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
+  - [x] Facebook
+    - [x] [v1](https://getmyfb.com)
+  - [x] ZippyShare. [reference](https://github.com/superXdev/zippyshare-downloader)
+    - [x] download
+  - [x] Pinterest
+    - [x] [v1](https://pinterestvideo.com)
+- [ ] Searching
+  - [x] Unsplash
+    - [x] search
+  - [x] Danbooru
+    - [x] search
+  - [x] Music
+    - [x] search
+  - [x] Apkmody
+    - [x] search
+    - [x] detail
+- [ ] Maker
+  - [x] PhotoFunia
+    - [x] text
+      - [x] 1 param.
+      - [ ] 2 param
+    - [x] image
+      - [x] Buffer
+  - [x] Image Diffusion.
+    - [x] stable (tensor restAPIs)
+    - [ ] anime (tensor restAPIs)
 
 ## Usage
 
 #### Install packages.
 
+Using GitHub version to test latest fix/update.
+
 ```bash
-npm install @xct007/frieren-scraper
+yarn add github:xct007/frieren-scraper
 ```
 
-or using `yarn`
-```bash
-yarn add @xct007/frieren-scraper
-```
+### Notice.
+
+Package name changed to `@xct007/frieren-scraper`
 
 ## Example use
 
@@ -84,7 +170,7 @@ const ArrObj = await storyWa.search("query");
 console.log(ArrObj);
 ```
 
-#### ZippyShare (Not working).
+#### ZippyShare.
 
 ```js
 import { zippyshare } from "@xct007/frieren-scraper";
@@ -208,6 +294,7 @@ console.log(ArrObj);
 import { music } from "@xct007/frieren-scraper";
 
 // Search music and audio url by query.
+// more short query, more results found.
 const ArrObj = await music.search("query");
 console.log(ArrObj);
 ```
@@ -222,6 +309,7 @@ const ArrObj = await apkmody.search("query");
 console.log(ArrObj);
 
 // fetch direct download url
+// High memory usage. LOL
 const Obj = await apkmody.download("https://APKMODY_URL");
 console.log(Obj);
 ```
@@ -284,6 +372,9 @@ const buffer = Buffer.from(Obj.base64Img, "base64");
 
 writeFileSync(saveFilename, buffer);
 
+
+// Anime diffusion will be added
+// if this repo star reach >= 50.
 ```
 
 ### Error Handling Example.
@@ -298,7 +389,7 @@ youtube.download("YOUTUBE_URL").then((Obj) => {
     // Error
     console.log(Obj.message);
   } else {
-    // ...code
+    // ...Your code
     console.log(Obj);
   }
 });
@@ -310,7 +401,11 @@ if (Obj.error) {
   // Error
   console.log(Obj.message);
 } else {
-  // ...code
+  // ...Your code.
   console.log(Obj);
 }
 ```
+
+### Note.
+
+This repository project is a learning exercise, and as such it utilizes references from other open source repositories. No commercial use is intended, and all efforts have been made to ensure proper attribution has been given to any referenced libraries and code.

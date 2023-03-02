@@ -1,7 +1,7 @@
 {
 	"name": "@xct007/frieren-scraper",
 	"version": "0.0.1",
-	"description": "Frieren-scraper.",
+	"description": "Scrape module",
 	"exports": {
 		".": {
 			"import": "./dist/esm/index.js",
@@ -25,7 +25,7 @@
 		"type": "git",
 		"url": "git+https://github.com/xct007/frieren-scraper.git"
 	},
-	"keywords": ["scraper"],
+	"keywords": ["scraper", "scrape", "api", "tiktok", "instagram", "faceebok", "diffusion"],
 	"author": "FrierenDv",
 	"license": "MIT",
 	"bugs": {
