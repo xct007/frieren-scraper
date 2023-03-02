@@ -53,7 +53,9 @@ class Diffusion {
 	}
 }
 const _diffusion = new Diffusion();
-const stable = _diffusion.stable;
+const stable = async (prompt: string): Promise<StableDiffusionResult | errorHandling> => {
+	return _diffusion.stable(prompt)
+}
 export const diffusion = {
 	stable,
 	_diffusion,

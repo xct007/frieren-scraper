@@ -5,3 +5,4 @@ dist
 *.log
 
 # waiting
+_README.md
