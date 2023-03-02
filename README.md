@@ -23,6 +23,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Danbooru
   - [x] Apkmody.io
   - [x] PhotoFunia
+  - [ ] Hentai.tv
 - App
   - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
@@ -49,6 +50,8 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] latest
     - [x] search
     - [x] detail
+  - [ ] Hentai.tv
+    - [ ] etc.
 - [ ] Downloader?
   - [x] Youtube
     - [x] search
@@ -95,7 +98,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 Using GitHub version to test latest fix/update.
 
 ```bash
-yarn add github:xct007/frieren-scraper
+npm install github:xct007/frieren-scraper
 ```
 
 ### Notice.
