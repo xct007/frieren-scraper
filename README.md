@@ -24,6 +24,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] Apkmody.io
   - [x] PhotoFunia
   - [ ] Hentai.tv
+  - [x] bokepsin
 - App
   - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
   - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
@@ -66,7 +67,7 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] [v1](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
   - [x] Facebook
     - [x] [v1](https://getmyfb.com)
-  - [x] ZippyShare. [reference](https://github.com/superXdev/zippyshare-downloader)
+  - [ ] ZippyShare. [reference](https://github.com/superXdev/zippyshare-downloader)
     - [x] download
   - [x] Pinterest
     - [x] [v1](https://pinterestvideo.com)
@@ -88,8 +89,13 @@ You decide, you can open issues what website/app and data to be scrapped.
     - [x] image
       - [x] Buffer
   - [x] Image Diffusion.
-    - [x] stable (tensor restAPIs)
-    - [ ] anime (tensor restAPIs)
+    - [x] stable ( restAPIs )
+    - [ ] anime ( restAPIs )
+- [ ] Nsfw
+  - [x] Bokepsin
+    - [x] latest
+    - [x] search
+    - [x] detail
 
 ## Usage
 
@@ -173,7 +179,7 @@ const ArrObj = await storyWa.search("query");
 console.log(ArrObj);
 ```
 
-#### ZippyShare.
+#### ZippyShare. (Not working)
 
 ```js
 import { zippyshare } from "@xct007/frieren-scraper";
@@ -354,7 +360,7 @@ import { writeFileSync } from "fs";
 
 // stable diffusion.
 const prompt = "1girl, blush, looking to viewer, warm smile,";
-const seed = 123456789 // (optional). default random.
+const seed = 123456789; // (optional). default random.
 
 const Obj = await diffusion.stable(prompt, seed);
 console.log(Obj);
@@ -369,15 +375,66 @@ console.log(Obj);
 */
 
 // example save to disk
-const saveFilename = `./image.${Obj.ext}`
+const saveFilename = `./image.${Obj.ext}`;
 
 const buffer = Buffer.from(Obj.base64Img, "base64");
 
 writeFileSync(saveFilename, buffer);
 
-
 // Anime diffusion will be added
 // if this repo star reach >= 50.
+```
+
+type
+
+```ts
+type StableDiffusionResult = {
+  process_time: number;
+  seed: string;
+  ext: string;
+  mimetype: string;
+  base64Img: string;
+};
+```
+
+### Nsfw
+
+#### Bokepsin
+
+```js
+import { bokepsin } from "@xct007/frieren-scraper";
+
+// Get latest
+const ArrObj = await bokepsin.latest();
+console.log(ArrObj);
+
+// search
+const ArrObj = await bokepsin.search("query");
+console.log(ArrObj);
+
+// detail
+const Obj = await bokepsin.latest("URL");
+console.log(ArrObj);
+```
+
+type
+
+```ts
+type BokepSinLatestSearchResults = {
+  title: string;
+  views: string;
+  duration: string;
+  url: string;
+  thumbnail: string;
+}[];
+
+type BokepSinDetail = {
+  title: string;
+  views: string;
+  duration: string;
+  thumbnail: string;
+  embed: string;
+};
 ```
 
 ### Error Handling Example.
@@ -390,7 +447,13 @@ import { youtube } from "@xct007/frieren-scraper";
 youtube.download("YOUTUBE_URL").then((Obj) => {
   if (Obj.error) {
     // Error
-    console.log(Obj.message);
+    console.log(Obj.);
+    /*
+      {
+        "error": true,
+        "message": ""
+      }
+    */
   } else {
     // ...Your code
     console.log(Obj);
@@ -402,7 +465,13 @@ const Obj = await youtube.download("YOUTUBE_URL");
 
 if (Obj.error) {
   // Error
-  console.log(Obj.message);
+  console.log(Obj);
+  /*
+    {
+      "error": true,
+      "message": ""
+    }
+  */
 } else {
   // ...Your code.
   console.log(Obj);

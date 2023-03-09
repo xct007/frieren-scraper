@@ -201,3 +201,17 @@ export type StableDiffusionResult = {
 	mimetype: string;
 	base64Img: string;
 };
+export type BokepSinLatestSearchResults = {
+	title: string;
+	views: string;
+	duration: string;
+	url: string;
+	thumbnail: string;
+}[];
+export type BokepSinDetail = {
+	title: string;
+	views: string;
+	duration: string;
+	thumbnail: string;
+	embed: string;
+};
