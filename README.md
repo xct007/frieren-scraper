@@ -400,12 +400,12 @@ type StableDiffusionResult = {
 #### h5.tu.qq
 
 ```js
-import { maker } from "@xct007/frieren-scraper";
+import { h5tuqq } from "@xct007/frieren-scraper";
 
 // full path image url.
 const imageUrl = "https://itsrose.my.id/rose.jpeg"
 
-const data = await maker.h5tuqq(imageUrl);
+const data = await h5tuqq(imageUrl);
 
 // if no error
 if (!data.error) {
