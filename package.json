@@ -25,7 +25,15 @@
 		"type": "git",
 		"url": "git+https://github.com/xct007/frieren-scraper.git"
 	},
-	"keywords": ["scraper", "scrape", "api", "tiktok", "instagram", "faceebok", "diffusion"],
+	"keywords": [
+		"scraper",
+		"scrape",
+		"api",
+		"tiktok",
+		"instagram",
+		"faceebok",
+		"diffusion"
+	],
 	"author": "FrierenDv",
 	"license": "MIT",
 	"bugs": {

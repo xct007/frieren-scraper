@@ -65,9 +65,7 @@ async function search(
 	}
 }
 
-async function detail(
-	url: string
-): Promise<BokepSinDetail | errorHandling> {
+async function detail(url: string): Promise<BokepSinDetail | errorHandling> {
 	if (!url.includes(BokepSinBaseUrl)) {
 		return {
 			error: true,

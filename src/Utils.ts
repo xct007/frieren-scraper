@@ -7,7 +7,6 @@ function CreateInstance(
 	config?: AxiosRequestConfig
 ): AxiosInstance {
 	return axios.create({
-		timeout: 15000,
 		headers: {
 			"User-Agent": "Frieren-Scraper (0.0.1x)",
 			...headers,

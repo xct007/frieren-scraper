@@ -2,6 +2,10 @@ import { Axios, Cheerio } from "../Utils";
 import { AnoboyBaseUrl } from "../Constant";
 import { errorHandling } from "../Interface";
 import { AnoboyLatest, AnoboyDetail } from "../Types";
+/*
+function find(e: Element): { [key: string]: any } {
+
+}*/
 
 async function latest(): Promise<AnoboyLatest[] | errorHandling> {
 	try {
@@ -41,17 +45,18 @@ async function search(query: string): Promise<AnoboyLatest[] | errorHandling> {
 		const $ = Cheerio(data);
 		const _temp: any[] = [];
 		$(".column-content > a[rel='bookmark']").each((i: number, e: Element) => {
-			const title: string = $(e).attr("title");
-			const update: string = $(e).find(".jamup").text();
+			const el: Element = $(e).find(".amv");
+			const title: string = $(el).find("h3.ibox1").text().trim();
+			const update: string = $(el).find(".jamup").text();
 			const thumbnail: string =
-				$(e).find("amp-img").attr("src") || $(e).find("img").attr("src");
+				$(e).find("amp-img").attr("src") || $(el).find("img").attr("src");
 			const url: string = $(e).attr("href");
 			_temp.push({ title, update, thumbnail, url });
 		});
 		if (Array.isArray(_temp) && _temp.length) {
 			return _temp;
 		} else {
-			throw new Error("_temp is not an Array");
+			throw new Error(`Empty results for ${query}`);
 		}
 	} catch (e: any) {
 		return {
@@ -60,10 +65,36 @@ async function search(query: string): Promise<AnoboyLatest[] | errorHandling> {
 		};
 	}
 }
+function filtering(
+	el: Element,
+	method: string
+): { [key: string]: any }[] | undefined {
+	if (method === "table") {
+		const $ = Cheerio(el);
+		const _table = $("table > tbody > tr");
+		const results: any[] = [];
+		const _data = $(_table)
+			.find("td")
+			.each((i: number, e: Element) => {
+				const _eps = String($(e).text().trim()).includes("Episode");
+				const _url = $(e).find("a").attr("href");
+				if (_eps) {
+					results.push({
+						episode: _eps,
+						url: _url,
+					});
+				}
+			});
+		return results;
+	}
+}
 async function detail(url: string): Promise<AnoboyDetail | errorHandling> {
 	try {
 		const { data } = await Axios.get(url).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
+
+		const _test = filtering($, "table");
+
 		const title: string = $(".pagetitle > h1").text();
 		const judi: string = $("#judi > a").attr("href");
 		const urls: { source: string; url: string; resolution: string }[] = [];
@@ -79,6 +110,9 @@ async function detail(url: string): Promise<AnoboyDetail | errorHandling> {
 						urls.push({ source, url, resolution });
 					});
 			});
+		if (!(Array.isArray(urls) && urls.length)) {
+			throw new Error("opps, cant find any urls.");
+		}
 		return {
 			title,
 			judi,

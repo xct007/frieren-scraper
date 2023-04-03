@@ -4,7 +4,7 @@ export const YoutubeSearchBaseUrl: string = "https://youtube.com";
 export const YoutubeDownloadBaseUrl: string =
 	"https://onlinevideoconverter.pro";
 export const KomikuIdBaseUrl: string = "https://komiku.id";
-export const AnoboyBaseUrl: string = "https://anoboy.guru";
+export const AnoboyBaseUrl: string = "https://anoboy.ink";
 export const StatusWaIndonesiaBaseUrl: string =
 	"https://www.videostatusmarket.com";
 export const UnsplashBaseUrl: string = "https://api.unsplash.com";
@@ -23,3 +23,4 @@ export const PinterestDownloadBaseUrls: { v1: string } = {
 export const PrivateApiPhotoFunia: string = "https://photofunia.itsrose.site";
 export const PrivateWorkerApiItsrose: string = "https://worker.itsrose.site";
 export const BokepSinBaseUrl: string = "https://bokepsin.guru";
+export const APIsItsRose: string = "https://api.itsrose.site";
