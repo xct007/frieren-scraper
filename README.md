@@ -2,104 +2,144 @@
   <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/nickelodeon-dora-the-explorer-swiper-no-swiping-fox-ivof-miaol.jpg"/>
 </div>
 
-### Challenge
 
-- Scrape only using
-  - [x] Axios
-  - [x] Cheerio
+Table of Contents
+=================
 
-and results must be JSON Object.
+  * [Target](#target)
+  * [Progress](#progress)
+  * [Usage](#usage)
+    * [Installations](#installations)
+    * [Example](#example-use)
+      * [Downloader](#downloader)
+      * [Anime/comic](#animecomic)
+      * [Searching](#searching)
+      * [Maker](#maker)
+      * [Nsfw](#nsfw)
+    * [Error handling](#error-handling)
 
-### Target
+## Target
 
 You decide, you can open issues what website/app and data to be scrapped.
 
-- Website
-  - [x] Doujindesu
-  - [x] Otakudesu
-  - [x] Youtube
-  - [x] Anoboy
-  - [x] Komiku.id
-  - [x] Danbooru
-  - [x] Apkmody.io
-  - [x] PhotoFunia
-  - [ ] Hentai.tv
-  - [x] bokepsin
-- App
-  - [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
-  - [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
-  - [x] [Downloader for tiktok](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
-    - `App use rapid Api.`
-  - [x] [SuperDownloader](https://play.google.com/store/apps/details?id=com.music.downloader.downloadid)
+<details>
+<summary>Website</summary>
+  
+- [x] Doujindesu
+- [x] Otakudesu
+- [x] Youtube
+- [x] Anoboy
+- [x] Komiku.id
+- [x] Danbooru
+- [x] Apkmody.io
+- [x] PhotoFunia
+- [ ] Hentai.tv
+- [x] bokepsin
+  
+</details>
 
-### Progress.
+<details>
+  <summary>App</summary>
+  
+- [x] [Status Video Wa Indonesia](https://play.google.com/store/apps/details?id=com.videostatus.indonesia)
+- [x] [Unsplash](https://play.google.com/store/apps/details?id=com.aqteam.photofree)
+- [x] [Downloader for tiktok](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
+  - `App use rapid Api.`
+- [x] [SuperDownloader](https://play.google.com/store/apps/details?id=com.music.downloader.downloadid)
 
-- [ ] Anime/comic
-  - [x] Doujindesu
-    - [x] latest
-    - [x] search
-    - [x] detail
-  - [x] Otakudesu
-    - [x] latest
-    - [x] search
-    - [x] detail
-  - [x] Anoboy
-    - [x] latest
-    - [x] search
-    - [x] detail
-  - [x] Komiku.id
-    - [x] latest
-    - [x] search
-    - [x] detail
-  - [ ] Hentai.tv
-    - [ ] etc.
-- [ ] Downloader?
-  - [x] Youtube
-    - [x] search
-      - [x] videos
-    - [x] dowload
-  - [x] Status Video Wa Indonesia
-    - [x] popular
-    - [x] search
-  - [x] Instagram
-    - [x] [v1](https://downloadgram.org)
-  - [x] Tiktok
-    - [x] [v1](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
-  - [x] Facebook
-    - [x] [v1](https://getmyfb.com)
-  - [ ] ZippyShare. [reference](https://github.com/superXdev/zippyshare-downloader)
-    - [x] download
-  - [x] Pinterest
-    - [x] [v1](https://pinterestvideo.com)
+</details>
+
+
+## Progress
+
+<details>
+  <summary>Anime/comic</summary>
+  
+- [x] Doujindesu
+  - [x] latest
+  - [x] search
+  - [x] detail
+- [x] Otakudesu
+  - [x] latest
+  - [x] search
+  - [x] detail
+- [x] Anoboy
+  - [x] latest
+  - [x] search
+  - [x] detail
+- [x] Komiku.id
+  - [x] latest
+  - [x] search
+  - [x] detail
+- [ ] Hentai.tv
+  - [ ] etc.
+
+</details>
+
+<details>
+  <summary> Downloader </summary>
+  
+- [x] Youtube
+  - [x] search
+    - [x] videos
+  - [x] dowload
+- [x] Status Video Wa Indonesia
+  - [x] popular
+  - [x] search
+- [x] Instagram
+  - [x] [v1](https://downloadgram.org)
+- [x] Tiktok
+  - [x] [v1](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
+- [x] Facebook
+  - [x] [v1](https://getmyfb.com)
+- [ ] ZippyShare. [reference](https://github.com/superXdev/zippyshare-downloader)
+  - [x] download
+- [x] Pinterest
+  - [x] [v1](https://pinterestvideo.com)
 - [ ] Searching
-  - [x] Unsplash
-    - [x] search
-  - [x] Danbooru
-    - [x] search
-  - [x] Music
-    - [x] search
-  - [x] Apkmody
-    - [x] search
-    - [x] detail
-- [ ] Maker
-  - [x] PhotoFunia
-    - [x] text
-      - [x] 1 param.
-      - [ ] 2 param
-    - [x] image
-      - [x] Buffer
-  - [x] Image Diffusion.
-    - [x] stable ( restAPIs )
-    - [ ] anime ( restAPIs )
-- [ ] Nsfw
-  - [x] Bokepsin
-    - [x] latest
-    - [x] search
-    - [x] detail
+- [x] Unsplash
+  - [x] search
+- [x] Danbooru
+  - [x] search
+- [x] Music
+  - [x] search
+- [x] Apkmody
+  - [x] search
+  - [x] detail
+  
+</details>
+
+<details>
+  <summary>Maker</summary>
+  
+- [x] PhotoFunia
+  - [x] text
+    - [x] 1 param.
+    - [ ] 2 param
+  - [x] image
+    - [x] Buffer
+- [x] Image Diffusion.
+  - [x] stable
+  - [ ] anime
+- [x] h5.tu.qq.com
+  - [x] From image url
+
+</details>
+
+<details>
+  <summary> Nsfw</summary>
+
+- [x] Bokepsin
+  - [x] latest
+  - [x] search
+  - [x] detail
+
+</details>
+
 
 ## Usage
 
-#### Install packages.
+#### Installations.
 
 Using GitHub version to test latest fix/update.
 
@@ -113,7 +153,7 @@ Package name changed to `@xct007/frieren-scraper`
 
 ## Example use
 
-### Social Media.
+### Downloader
 
 #### Youtube
 
@@ -275,7 +315,7 @@ const Obj = await doujindesu.detail("https://DOUJINDESU_URL");
 console.log(Obj);
 ```
 
-### Searching?
+### Searching
 
 #### Unsplash.
 
@@ -467,7 +507,7 @@ type BokepSinDetail = {
 };
 ```
 
-### Error Handling Example.
+### Error Handling
 
 There is probably no need to use statement try/catch, it is already handle.
 
