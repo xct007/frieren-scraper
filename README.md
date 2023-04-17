@@ -35,7 +35,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [x] PhotoFunia
 - [ ] Hentai.tv
 - [x] bokepsin
-- [ ] nhentai.to
+- [x] nhentai.to
   
 </details>
 
