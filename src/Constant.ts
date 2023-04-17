@@ -24,3 +24,4 @@ export const PrivateApiPhotoFunia: string = "https://photofunia.itsrose.site";
 export const PrivateWorkerApiItsrose: string = "https://worker.itsrose.site";
 export const BokepSinBaseUrl: string = "https://bokepsin.guru";
 export const APIsItsRose: string = "https://api.itsrose.site";
+export const nhentaiBaseUrl: string = "https://nhentai.to";

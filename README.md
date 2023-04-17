@@ -74,9 +74,9 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] detail
 - [ ] Hentai.tv
   - [ ] etc.
-- [ ] nhentai.to
-  - [ ] search
-  - [ ] detail
+- [x] nhentai.to
+  - [x] search
+  - [x] detail
 
 </details>
 
@@ -477,6 +477,24 @@ console.log(ArrObj);
 // detail
 const Obj = await bokepsin.latest("URL");
 console.log(ArrObj);
+```
+
+#### Nhentai
+
+```js
+import { nhentai } from "@xct007/frieren-scraper";
+
+// thumbnail/images url cannot be fetched
+
+// search
+const ArrObj = await nhentai.search("write your dream word");
+console.log(ArrObj);
+
+// detail
+const id = 123456
+const ArrObj = await bokepsin.detail(id);
+console.log(ArrObj);
+
 ```
 
 ### Error Handling

@@ -215,3 +215,23 @@ export type BokepSinDetail = {
 	thumbnail: string;
 	embed: string;
 };
+
+export type NhentaiSearchResults = {
+	title: string;
+	id: number;
+	thumbnail: string;
+}[];
+export type NhentaiDetails = {
+	title: string;
+	id: number;
+	metadata: {
+		tags?: string;
+		artists?: string;
+		languages?: string;
+		categories?: string;
+		pages?: string;
+		uploaded?: string;
+		error?: string;
+	};
+	images: string[];
+};
