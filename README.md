@@ -492,7 +492,7 @@ console.log(ArrObj);
 
 // detail
 const id = 123456
-const ArrObj = await bokepsin.detail(id);
+const ArrObj = await nhentai.detail(id);
 console.log(ArrObj);
 
 ```
