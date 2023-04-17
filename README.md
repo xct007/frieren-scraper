@@ -35,6 +35,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [x] PhotoFunia
 - [ ] Hentai.tv
 - [x] bokepsin
+- [ ] nhentai.to
   
 </details>
 
@@ -73,6 +74,9 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] detail
 - [ ] Hentai.tv
   - [ ] etc.
+- [ ] nhentai.to
+  - [ ] search
+  - [ ] detail
 
 </details>
 
@@ -425,18 +429,6 @@ writeFileSync(saveFilename, buffer);
 // if this repo star reach >= 50.
 ```
 
-type
-
-```ts
-type StableDiffusionResult = {
-  process_time: number;
-  seed: string;
-  ext: string;
-  mimetype: string;
-  base64Img: string;
-};
-```
-
 #### h5.tu.qq
 
 ```js
@@ -485,26 +477,6 @@ console.log(ArrObj);
 // detail
 const Obj = await bokepsin.latest("URL");
 console.log(ArrObj);
-```
-
-type
-
-```ts
-type BokepSinLatestSearchResults = {
-  title: string;
-  views: string;
-  duration: string;
-  url: string;
-  thumbnail: string;
-}[];
-
-type BokepSinDetail = {
-  title: string;
-  views: string;
-  duration: string;
-  thumbnail: string;
-  embed: string;
-};
 ```
 
 ### Error Handling
