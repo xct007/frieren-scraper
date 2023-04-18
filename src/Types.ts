@@ -243,3 +243,13 @@ export type XvideosSearchResults = {
 	url: string;
 	thumbnail: string;
 }[];
+export type XvideosDetailsResults = {
+	title: string;
+	quality: string;
+	duration: string;
+	urls: {
+		low?: string;
+		high?: string;
+		hls?: string;
+	};
+};

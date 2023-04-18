@@ -1,5 +1,5 @@
 export const DoujindesuBaseUrl: string = "https://212.32.226.234";
-export const OtakudesuBaseUrl: string = "https://otakudesu.ltd";
+export const OtakudesuBaseUrl: string = "https://otakudesu.lol";
 export const YoutubeSearchBaseUrl: string = "https://youtube.com";
 export const YoutubeDownloadBaseUrl: string =
 	"https://onlinevideoconverter.pro";

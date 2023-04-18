@@ -3,7 +3,7 @@ import { OtakudesuBaseUrl } from "../Constant";
 import { errorHandling } from "../Interface";
 import { OtakudesuLatest, OtakudesuSearch, OtakudesuDetail } from "../Types";
 
-async function latest(): Promise<OtakudesuLatest[] | errorHandling> {
+export async function latest(): Promise<OtakudesuLatest[] | errorHandling> {
 	try {
 		const { data } = await Axios.get(OtakudesuBaseUrl + "/ongoing-anime").catch(
 			(e: any) => e?.response
@@ -30,7 +30,7 @@ async function latest(): Promise<OtakudesuLatest[] | errorHandling> {
 		};
 	}
 }
-async function search(
+export async function search(
 	query: string
 ): Promise<OtakudesuSearch[] | errorHandling> {
 	try {
@@ -73,7 +73,9 @@ async function search(
 		};
 	}
 }
-async function detail(url: string): Promise<OtakudesuDetail | errorHandling> {
+export async function detail(
+	url: string
+): Promise<OtakudesuDetail | errorHandling> {
 	try {
 		const { data } = await Axios.get(url).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
@@ -160,7 +162,7 @@ async function detail(url: string): Promise<OtakudesuDetail | errorHandling> {
 				const resolution: string | any = $(e)
 					.find("strong")
 					.text()
-					.replace(/MP4|MKV/g, "")
+					.replace(/MP4|MKV/gi, "")
 					.trim();
 				$(e)
 					.find("a")
@@ -188,4 +190,3 @@ async function detail(url: string): Promise<OtakudesuDetail | errorHandling> {
 		};
 	}
 }
-export { latest, search, detail };

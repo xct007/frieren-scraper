@@ -36,7 +36,8 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [ ] Hentai.tv
 - [x] bokepsin
 - [x] nhentai.to
-  
+- [x] xvideos.com
+
 </details>
 
 <details>
@@ -75,6 +76,9 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [ ] Hentai.tv
   - [ ] etc.
 - [x] nhentai.to
+  - [x] search
+  - [x] detail
+- [x] xvideos
   - [x] search
   - [x] detail
 
@@ -501,8 +505,6 @@ console.log(ArrObj);
 
 ```js
 import { xvideos } from "@xct007/frieren-scraper";
-
-// thumbnail/images url cannot be fetched
 
 // search
 const ArrObj = await xvideos.search("mom");

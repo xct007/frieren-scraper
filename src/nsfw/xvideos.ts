@@ -1,7 +1,7 @@
 import { Axios, Cheerio } from "../Utils";
 import { errorHandling } from "../Interface";
 import { XvideosBaseUrl } from "../Constant";
-import { XvideosSearchResults } from "../Types";
+import { XvideosSearchResults, XvideosDetailsResults } from "../Types";
 
 export async function search(
 	query: string
@@ -54,7 +54,9 @@ export async function search(
 		};
 	}
 }
-export async function detail(url: string): Promise<any | errorHandling> {
+export async function detail(
+	url: string
+): Promise<XvideosDetailsResults | errorHandling> {
 	try {
 		const { data } = await Axios.request({
 			url,
@@ -82,17 +84,7 @@ export async function detail(url: string): Promise<any | errorHandling> {
 		const hlsRegExp = /setVideoHLS\('(.+?)'\)/;
 
 		// whatever.
-		interface Results {
-			title: string;
-			quality: string;
-			duration: string;
-			urls: {
-				low?: string;
-				high?: string;
-				hls?: string;
-			};
-		}
-		let results: Results = {
+		let results: XvideosDetailsResults = {
 			title: "",
 			quality: "",
 			duration: "",
