@@ -253,3 +253,18 @@ export type XvideosDetailsResults = {
 		hls?: string;
 	};
 };
+export type nineAppSearchResults = {
+	title: string;
+	url: string;
+	thumbnail: string;
+	size: string;
+	version: string;
+}[];
+export type nineAppDetailsResults = {
+	title: string;
+	version: string;
+	rating: string;
+	size: string;
+	publisher: string;
+	downloadUrl: string | boolean;
+};

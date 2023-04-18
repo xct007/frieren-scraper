@@ -37,6 +37,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [x] bokepsin
 - [x] nhentai.to
 - [x] xvideos.com
+- [x] 9apps.com
 
 </details>
 
@@ -78,9 +79,6 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [x] nhentai.to
   - [x] search
   - [x] detail
-- [x] xvideos
-  - [x] search
-  - [x] detail
 
 </details>
 
@@ -104,6 +102,11 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] download
 - [x] Pinterest
   - [x] [v1](https://pinterestvideo.com)
+
+</details>
+
+<details>
+  <summary> Downloader </summary>
 - [ ] Searching
 - [x] Unsplash
   - [x] search
@@ -114,7 +117,10 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [x] Apkmody
   - [x] search
   - [x] detail
-  
+- [x] 9apps.com
+  - [x] search
+  - [x] detail
+
 </details>
 
 <details>
@@ -139,6 +145,9 @@ You decide, you can open issues what website/app and data to be scrapped.
 
 - [x] Bokepsin
   - [x] latest
+  - [x] search
+  - [x] detail
+- [x] xvideos
   - [x] search
   - [x] detail
 
@@ -368,6 +377,20 @@ console.log(ArrObj);
 // fetch direct download url
 // High memory usage. LOL
 const Obj = await apkmody.download("https://APKMODY_URL");
+console.log(Obj);
+```
+
+#### 9Apps.
+
+```js
+import { nineApps } from "@xct007/frieren-scraper";
+
+// search apps/games
+const ArrObj = await nineApps.search("query");
+console.log(ArrObj);
+
+// fetch detail/direct download url
+const Obj = await nineApps.download("https://9apps.com/...");
 console.log(Obj);
 ```
 
