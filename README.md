@@ -497,6 +497,24 @@ console.log(ArrObj);
 
 ```
 
+#### Xvideos
+
+```js
+import { xvideos } from "@xct007/frieren-scraper";
+
+// thumbnail/images url cannot be fetched
+
+// search
+const ArrObj = await xvideos.search("mom");
+console.log(ArrObj);
+
+// detail
+const url = "https://xvideos..."
+const ArrObj = await xvideos.detail(url);
+console.log(ArrObj);
+
+```
+
 ### Error Handling
 
 There is probably no need to use statement try/catch, it is already handle.

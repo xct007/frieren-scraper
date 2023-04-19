@@ -235,3 +235,11 @@ export type NhentaiDetails = {
 	};
 	images: string[];
 };
+export type XvideosSearchResults = {
+	title: string;
+	views: string;
+	quality: string;
+	duration: string;
+	url: string;
+	thumbnail: string;
+}[];
