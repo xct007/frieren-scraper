@@ -107,8 +107,8 @@ You decide, you can open issues what website/app and data to be scrapped.
 </details>
 
 <details>
-  <summary> Downloader </summary>
-- [ ] Searching
+  <summary> Searching </summary>
+
 - [x] Unsplash
   - [x] search
 - [x] Danbooru
