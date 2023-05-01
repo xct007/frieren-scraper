@@ -268,3 +268,25 @@ export type nineAppDetailsResults = {
 	publisher: string;
 	downloadUrl: string | boolean;
 };
+export type hentaiHavenSearchResults = {
+	title: string;
+	thumbnail: string;
+	url: string;
+	metadata: { [key: string]: any };
+};
+export type hentaiHavenDetails = {
+	isEpisode: boolean;
+	title: string;
+	thumbnail: string;
+	metadata?: { [key: string]: any };
+	synopsis?: string;
+	source?: {
+		type?: string;
+		url?: string;
+	};
+	episodes?: {
+		episode: string;
+		release_date: string;
+		url: string;
+	}[];
+};

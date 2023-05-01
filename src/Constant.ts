@@ -27,3 +27,4 @@ export const APIsItsRose: string = "https://api.itsrose.site";
 export const nhentaiBaseUrl: string = "https://nhentai.to";
 export const XvideosBaseUrl: string = "https://xvideos.com";
 export const nineAppsBaseUrl: string = "https://9apps.com";
+export const hentaiHavenBaseUrl: string = "https://hentaihaven.xxx";

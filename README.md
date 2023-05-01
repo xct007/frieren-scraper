@@ -38,6 +38,7 @@ You decide, you can open issues what website/app and data to be scrapped.
 - [x] nhentai.to
 - [x] xvideos.com
 - [x] 9apps.com
+- [x] hentaihaven.xxx
 
 </details>
 
@@ -148,6 +149,9 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] search
   - [x] detail
 - [x] xvideos
+  - [x] search
+  - [x] detail
+- [x] hentaihaven
   - [x] search
   - [x] detail
 
@@ -537,6 +541,21 @@ console.log(ArrObj);
 const url = "https://xvideos..."
 const ArrObj = await xvideos.detail(url);
 console.log(ArrObj);
+
+```
+
+#### HentaiHaven
+
+```js
+import { hentaiHaven } from "@xct007/frieren-scraper";
+
+// search
+const ArrObj = await hentaiHaven.search("your mum");
+console.log(ArrObj);
+
+// detail
+const Obj = await hentaiHaven.detail("https://hentaihaven/your_mum");
+console.log(Obj);
 
 ```
 
