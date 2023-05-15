@@ -95,6 +95,7 @@ You decide, you can open issues what website/app and data to be scrapped.
   - [x] search
 - [x] Instagram
   - [x] [v1](https://downloadgram.org)
+  - [x] [v2](https://indown.io)
 - [x] Tiktok
   - [x] [v1](https://play.google.com/store/apps/details?id=com.downloaderfor.tiktok)
 - [x] Facebook
@@ -211,6 +212,9 @@ import { instagram } from "@xct007/frieren-scraper";
 const Obj = await instagram.v1("https://instagram_URL");
 console.log(Obj);
 
+// v2. fetch direct download url
+const Obj = await instagram.v2("https://instagram_URL");
+console.log(Obj);
 // others version will added soon.
 ```
 

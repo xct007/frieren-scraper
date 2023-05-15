@@ -8,7 +8,10 @@ export const AnoboyBaseUrl: string = "https://anoboy.ink";
 export const StatusWaIndonesiaBaseUrl: string =
 	"https://www.videostatusmarket.com";
 export const UnsplashBaseUrl: string = "https://api.unsplash.com";
-export const InstagramDownloadBaseUrlV1: string = "https://downloadgram.org";
+export const InstagramDownloadBaseUrl: {
+	v1: string;
+	v2: string;
+} = { v1: "https://downloadgram.org", v2: "https://indown.io" };
 export const TiktokDownloadRapidApiServer: string =
 	"https://tiktok-video-no-watermark2.p.rapidapi.com";
 export const DanbooruBaseUrl: string = "https://danbooru.donmai.us";
