@@ -464,36 +464,6 @@ writeFileSync(saveFilename, buffer);
 // if this repo star reach >= 50.
 ```
 
-#### h5.tu.qq
-
-```js
-import { h5tuqq } from "@xct007/frieren-scraper";
-
-// full path image url.
-const imageUrl = "https://itsrose.my.id/rose.jpeg"
-
-const data = await h5tuqq(imageUrl);
-
-// if no error
-if (!data.error) {
-  console.log(data);
-  /**
-    {
-      "image": "https://...singleLink",
-      "images": [
-        "https://...link-1",
-        "https://...link-2",
-        ...
-      ]
-    }
-  */
-
-} else {
-  console.log(data.message)
-}
-
-```
-
 ### Nsfw
 
 #### Bokepsin
