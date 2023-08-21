@@ -65,4 +65,4 @@ async function v1 (url: string): Promise<TiktokDownloadResult | errorHandling> {
 		}
 	}
 }
-export { v1 }
+export const tiktok = async (url: string) => v1(url)
