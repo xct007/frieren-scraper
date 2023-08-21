@@ -19,7 +19,10 @@
 		"no-tabs": 0,
 		"indent": [1, "tab"],
 		"no-unused-expressions": 0,
+		"no-duplicate-imports": "warn",
+		"semi": "off",
+		"quotes": ["warn", "double"],
 		"@typescript-eslint/no-explicit-any": 0,
-		"import/extensions": ["error", "ignorePackages"]
+		"import/extensions": ["off"]
 	}
 }

@@ -1,9 +1,9 @@
-import { Axios } from "../Utils";
-import { TiktokDownloadRapidApiServer } from "../Constant";
-import { errorHandling } from "../Interface";
-import { TiktokDownloadResult } from "../Types";
+import { Axios } from "../Utils"
+import { TiktokDownloadRapidApiServer } from "../Constant"
+import { errorHandling } from "../Interface"
+import { TiktokDownloadResult } from "../Types"
 
-function RapidApiInit(url: string): {
+function RapidApiInit (url: string): {
 	headers: {
 		"x-rapidapi-key": string;
 	};
@@ -13,26 +13,26 @@ function RapidApiInit(url: string): {
 	};
 } {
 	const _key =
-		"JTJGMCUyRmIlMkY4JTJGMyUyRjglMkY4JTJGYiUyRjclMkY3JTJGNSUyRm0lMkZzJTJGaCUyRjQlMkYwJTJGOCUyRjQlMkY5JTJGOCUyRjYlMkYxJTJGMyUyRjAlMkY4JTJGYiUyRmUlMkY3JTJGMCUyRnAlMkYxJTJGNyUyRmMlMkYwJTJGMyUyRjMlMkZqJTJGcyUyRm4lMkYzJTJGZSUyRjAlMkY4JTJGNSUyRmElMkZkJTJGYyUyRjglMkZlJTJGZiUyRjElMkY=";
+		"JTJGMCUyRmIlMkY4JTJGMyUyRjglMkY4JTJGYiUyRjclMkY3JTJGNSUyRm0lMkZzJTJGaCUyRjQlMkYwJTJGOCUyRjQlMkY5JTJGOCUyRjYlMkYxJTJGMyUyRjAlMkY4JTJGYiUyRmUlMkY3JTJGMCUyRnAlMkYxJTJGNyUyRmMlMkYwJTJGMyUyRjMlMkZqJTJGcyUyRm4lMkYzJTJGZSUyRjAlMkY4JTJGNSUyRmElMkZkJTJGYyUyRjglMkZlJTJGZiUyRjElMkY="
 	// Attempt to avoid rapidapi detector  :)
 	const key = decodeURIComponent(
 		Buffer.from(_key, "base64").toString("ascii")
-	).replace(/\//g, "");
+	).replace(/\//g, "")
 	return {
-		["headers"]: {
-			["x-rapidapi-key"]: key,
+		headers: {
+			"x-rapidapi-key": key
 		},
-		["params"]: {
-			["url"]: url,
-			["hd"]: 1,
-		},
-	};
+		params: {
+			url,
+			hd: 1
+		}
+	}
 }
-async function v1(url: string): Promise<TiktokDownloadResult | errorHandling> {
+async function v1 (url: string): Promise<TiktokDownloadResult | errorHandling> {
 	try {
 		const { data } = await Axios.get(TiktokDownloadRapidApiServer + "/", {
-			...RapidApiInit(url),
-		}).catch((e: any) => e?.response);
+			...RapidApiInit(url)
+		}).catch((e: any) => e?.response)
 		if (data && typeof data === "object") {
 			if (data.code === 0) {
 				return {
@@ -44,25 +44,25 @@ async function v1(url: string): Promise<TiktokDownloadResult | errorHandling> {
 					play: data?.data?.play,
 					wmplay: data?.data?.wmplay,
 					hdplay: data?.data?.hdplay,
-					music: data?.data?.music,
-				};
+					music: data?.data?.music
+				}
 			} else {
 				throw new Error(
 					data.message ||
 						`Failed to get data from ${TiktokDownloadRapidApiServer}`
-				);
+				)
 			}
 		} else {
 			throw new Error(
 				data.message ||
 					`Failed to get data from ${TiktokDownloadRapidApiServer}`
-			);
+			)
 		}
 	} catch (e: any) {
 		return {
 			error: true,
-			message: String(e),
-		};
+			message: String(e)
+		}
 	}
 }
-export { v1 };
+export { v1 }

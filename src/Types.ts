@@ -17,7 +17,7 @@ export type DoujindesuDetail = {
 	titles: string;
 	tags: string;
 	thumbnail: string;
-	metadata?: {};
+	metadata?: object;
 	links: {
 		title: string;
 		url: string;
@@ -38,7 +38,7 @@ export type OtakudesuSearch = {
 	url: string;
 	thumbnail: string;
 }[];
-export type OtakudesuDetail = {};
+export type OtakudesuDetail = object;
 export type YoutubeSearchResult = {
 	title: string;
 	thumbnail: string;
@@ -49,7 +49,6 @@ export type YoutubeSearchResult = {
 }[];
 export type YoutubeDownloadResult = {
 	title: string;
-	source: string;
 	duration: string;
 	thumbnail: string;
 	urls: { url: string; quality: string; ext: string }[];

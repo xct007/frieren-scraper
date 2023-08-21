@@ -18,6 +18,7 @@
 		"build:cjs": "tsc -p tsconfig.cjs.json",
 		"build:types": "tsc -p tsconfig.types.json",
 		"fix": "fix-esm-import-path dist/esm",
+		"lint": "eslint --fix src",
 		"build:all": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types && npm run fix",
 		"prepare": "node scripts/compile.js && node scripts/write-package.js"
 	},
