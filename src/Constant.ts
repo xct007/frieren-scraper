@@ -1,4 +1,4 @@
-export const DoujindesuBaseUrl = "https://212.32.226.234"
+export const DoujindesuBaseUrl = "https://doujindesu.tv"
 export const OtakudesuBaseUrl = "https://otakudesu.lol"
 export const YoutubeSearchBaseUrl = "https://youtube.com"
 export const YoutubeDownloadBaseUrl =
