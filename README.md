@@ -208,14 +208,9 @@ console.log(Obj);
 ```js
 import { instagram } from "@xct007/frieren-scraper";
 
-// v1. fetch direct download url
-const Obj = await instagram.v1("https://instagram_URL");
+// fetch direct download url
+const Obj = await instagram.download("https://instagram_URL");
 console.log(Obj);
-
-// v2. fetch direct download url
-const Obj = await instagram.v2("https://instagram_URL");
-console.log(Obj);
-// others version will added soon.
 ```
 
 #### Facebook.
