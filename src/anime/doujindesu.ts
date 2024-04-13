@@ -3,7 +3,7 @@ import { DoujindesuBaseUrl } from "../Constant";
 import { errorHandling } from "../Interface";
 import { DoujindesuLatest, DoujindesuSearch, DoujindesuDetail } from "../Types";
 
-async function latest (): Promise<DoujindesuLatest[] | errorHandling> {
+async function latest(): Promise<DoujindesuLatest[] | errorHandling> {
 	try {
 		const { data } = await Axios.get(DoujindesuBaseUrl).catch(
 			(e: any) => e?.response
@@ -19,7 +19,7 @@ async function latest (): Promise<DoujindesuLatest[] | errorHandling> {
 				title,
 				chapter,
 				thumbnail,
-				url
+				url,
 			});
 		});
 		if (Array.isArray(_temp) && _temp.length) {
@@ -31,14 +31,14 @@ async function latest (): Promise<DoujindesuLatest[] | errorHandling> {
 		return { error: true, message: e?.TypeError || String(e) };
 	}
 }
-async function search (
+async function search(
 	query: string
 ): Promise<DoujindesuSearch[] | errorHandling> {
 	try {
 		const { data } = await Axios.get(DoujindesuBaseUrl, {
 			params: {
-				s: query
-			}
+				s: query,
+			},
 		}).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
 		const _temp: any[] = [];
@@ -60,11 +60,11 @@ async function search (
 		return { error: true, message: e?.TypeError || String(e) };
 	}
 }
-async function detail (url: string): Promise<DoujindesuDetail | errorHandling> {
+async function detail(url: string): Promise<DoujindesuDetail | errorHandling> {
 	if (!url.includes(DoujindesuBaseUrl)) {
 		return {
 			error: true,
-			message: "Invalid url!"
+			message: "Invalid url!",
 		};
 	}
 	try {
@@ -105,7 +105,7 @@ async function detail (url: string): Promise<DoujindesuDetail | errorHandling> {
 			tags,
 			thumbnail,
 			metadata,
-			links
+			links,
 		};
 	} catch (e: any) {
 		return { error: true, message: e?.TypeError || String(e) };

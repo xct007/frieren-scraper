@@ -3,26 +3,26 @@
 		"es2021": true,
 		"node": true
 	},
-	"extends": [
-		"standard",
-		"eslint:recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended"
-	],
+	"extends": ["plugin:prettier/recommended"],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": ["@typescript-eslint", "import"],
 	"rules": {
-		"no-tabs": 0,
-		"indent": [1, "tab"],
-		"no-unused-expressions": 0,
-		"no-duplicate-imports": "warn",
-		"semi": "off",
-		"quotes": ["warn", "double"],
-		"@typescript-eslint/no-explicit-any": 0,
-		"import/extensions": ["off"]
+		"prettier/prettier": [
+			"error",
+			{
+				"arrowParens": "always",
+				"trailingComma": "es5",
+				"semi": true,
+				"useTabs": true,
+				"tabWidth": 0,
+				"quoteProps": "as-needed",
+				"printWidth": 80,
+				"endOfLine": "crlf",
+				"bracketSpacing": true
+			}
+		]
 	}
 }

@@ -43,4 +43,4 @@ async function writePackageJson() {
 	}
 }
 
-if (require.main === module) writePackageJson();
+writePackageJson();

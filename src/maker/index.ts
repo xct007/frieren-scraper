@@ -1,2 +1,2 @@
-export * from "./photofunia"
-export * from "./diffusion"
+export * from "./photofunia";
+export * from "./diffusion";
