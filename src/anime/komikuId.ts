@@ -20,7 +20,7 @@ class komiku {
 		updatedLoader: "span.ls4s",
 		chapterLoader: "a.ls24",
 		urlLoader: {
-			base: "h4 > a",
+			base: ".ls4v > a",
 			attribute: "href",
 		},
 		thumbnailLoader: {
@@ -32,7 +32,7 @@ class komiku {
 	private static _detailLoader = {
 		manga: {
 			titleLoader: {
-				title: "h1[itemprop='name']",
+				title: "span[itemprop='name']",
 			},
 			descriptionLoader: "p.desc",
 			thumbnailLoader: {
@@ -101,6 +101,7 @@ class komiku {
 					.find(komiku._latestLoader.thumbnailLoader.base)
 					.attr(komiku._latestLoader.thumbnailLoader.attribute)
 					.replace(/\?.*$/, "");
+				console.log(url);
 				if (url.startsWith("http")) {
 					url = url;
 				} else {
