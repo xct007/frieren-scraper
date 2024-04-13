@@ -1,3 +1,4 @@
+import https from "https";
 import { Axios, Cheerio } from "../Utils";
 import { DoujindesuBaseUrl } from "../Constant";
 import { errorHandling } from "../Interface";
@@ -5,9 +6,26 @@ import { DoujindesuLatest, DoujindesuSearch, DoujindesuDetail } from "../Types";
 
 async function latest(): Promise<DoujindesuLatest[] | errorHandling> {
 	try {
-		const { data } = await Axios.get(DoujindesuBaseUrl).catch(
-			(e: any) => e?.response
-		);
+		const { data } = await Axios.get(DoujindesuBaseUrl, {
+			httpsAgent: new https.Agent({ keepAlive: true }),
+			headers: {
+				accept:
+					"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+				"accept-language": "en-US,en;q=0.9,id;q=0.8,en-GB;q=0.7,en-GB-oxendict;q=0.6",
+				"cache-control": "no-cache",
+				pragma: "no-cache",
+				"sec-ch-ua":
+					'"Microsoft Edge";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
+				"sec-ch-ua-mobile": "?0",
+				"sec-ch-ua-platform": '"Windows"',
+				"sec-fetch-dest": "document",
+				"sec-fetch-mode": "navigate",
+				"sec-fetch-site": "none",
+				"sec-fetch-user": "?1",
+				"sec-gpc": "1",
+				"upgrade-insecure-requests": "1",
+			},
+		}).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
 		const _temp: any[] = [];
 		$(".feed#archives > .entries > .entry").each((i: number, e: Element) => {
@@ -39,6 +57,24 @@ async function search(
 			params: {
 				s: query,
 			},
+			httpsAgent: new https.Agent({ keepAlive: true }),
+			headers: {
+				accept:
+					"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+				"accept-language": "en-US,en;q=0.9,id;q=0.8,en-GB;q=0.7,en-GB-oxendict;q=0.6",
+				"cache-control": "no-cache",
+				pragma: "no-cache",
+				"sec-ch-ua":
+					'"Microsoft Edge";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
+				"sec-ch-ua-mobile": "?0",
+				"sec-ch-ua-platform": '"Windows"',
+				"sec-fetch-dest": "document",
+				"sec-fetch-mode": "navigate",
+				"sec-fetch-site": "none",
+				"sec-fetch-user": "?1",
+				"sec-gpc": "1",
+				"upgrade-insecure-requests": "1",
+			},
 		}).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
 		const _temp: any[] = [];
@@ -68,7 +104,26 @@ async function detail(url: string): Promise<DoujindesuDetail | errorHandling> {
 		};
 	}
 	try {
-		const { data } = await Axios.get(url).catch((e: any) => e?.response);
+		const { data } = await Axios.get(url, {
+			httpsAgent: new https.Agent({ keepAlive: true }),
+			headers: {
+				accept:
+					"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+				"accept-language": "en-US,en;q=0.9,id;q=0.8,en-GB;q=0.7,en-GB-oxendict;q=0.6",
+				"cache-control": "no-cache",
+				pragma: "no-cache",
+				"sec-ch-ua":
+					'"Microsoft Edge";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
+				"sec-ch-ua-mobile": "?0",
+				"sec-ch-ua-platform": '"Windows"',
+				"sec-fetch-dest": "document",
+				"sec-fetch-mode": "navigate",
+				"sec-fetch-site": "none",
+				"sec-fetch-user": "?1",
+				"sec-gpc": "1",
+				"upgrade-insecure-requests": "1",
+			},
+		}).catch((e: any) => e?.response);
 		const $ = Cheerio(data);
 
 		const title: string = $(".thumbnail > a > img").attr("title").trim();
