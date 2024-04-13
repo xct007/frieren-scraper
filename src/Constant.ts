@@ -9,7 +9,7 @@ export const UnsplashBaseUrl = "https://api.unsplash.com";
 export const InstagramDownloadBaseUrl: {
 	v1: string;
 	v2: string;
-} = { v1: "https://downloadgram.org", v2: "https://indown.io" };
+} = { v1: "https://igram.bar", v2: "https://indown.io" };
 export const TiktokDownloadRapidApiServer =
 	"https://tiktok-video-no-watermark2.p.rapidapi.com";
 export const DanbooruBaseUrl = "https://danbooru.donmai.us";

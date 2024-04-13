@@ -9,7 +9,8 @@ class Instagrams {
 	): Promise<InstagramDownloadResults[] | errorHandling> {
 		try {
 			const { data } = await Axios.request({
-				url: InstagramDownloadBaseUrl.v1,
+				baseURL: InstagramDownloadBaseUrl.v1,
+				url: "/wp-admin/admin-ajax.php",
 				method: "POST",
 				headers: {
 					"Content-Type": "application/x-www-form-urlencoded",
@@ -17,12 +18,16 @@ class Instagrams {
 					Referer: InstagramDownloadBaseUrl.v1,
 					"Referrer-Policy": "strict-origin-when-cross-origin",
 				},
-				data: new URLSearchParams({ url, submit: "" }),
+				data: new URLSearchParams({ action: "ajax_insta_url", input: url }),
 			}).catch((e: any) => e?.response);
 			const $ = Cheerio(data);
 			const _temp: any[] = [];
-			$("#downloadhere > a[download='']").each((i: number, e: Element) => {
-				_temp.push({ url: $(e).attr("href") });
+			$("script").each((i: number, e: Element) => {
+				const text = $(e).html();
+				const url = text?.match(/location.href = "(.*?)"/)?.[1];
+				if (url) {
+					_temp.push({ url });
+				}
 			});
 			if (Array.isArray(_temp) && _temp.length) {
 				return _temp;
