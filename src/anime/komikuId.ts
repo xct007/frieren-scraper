@@ -66,7 +66,7 @@ class komiku {
 	};
 
 	private static _searchLoader = {
-		base: ".daftar > .bge",
+		base: ".bge",
 		titleLoader: {
 			title: ".kan > a > h3",
 			title_id: ".kan span.judul2",
@@ -74,7 +74,7 @@ class komiku {
 		descriptionLoader: ".kan > p",
 		thumbnailLoader: {
 			base: ".bgei > a > img",
-			attribute: "data-src",
+			attribute: "src",
 		},
 		urlLoader: {
 			base: ".bgei > a",
@@ -101,7 +101,6 @@ class komiku {
 					.find(komiku._latestLoader.thumbnailLoader.base)
 					.attr(komiku._latestLoader.thumbnailLoader.attribute)
 					.replace(/\?.*$/, "");
-				console.log(url);
 				if (url.startsWith("http")) {
 					url = url;
 				} else {
@@ -225,7 +224,7 @@ class komiku {
 	): Promise<KomikuIdSearchResults[] | errorHandling> {
 		try {
 			const { data } = await Axios.get(
-				KomikuIdBaseUrl.replace("https://", "https://data.") + "/cari/",
+				KomikuIdBaseUrl.replace("https://", "https://api."),
 				{
 					params: {
 						post_type: "manga",
@@ -252,9 +251,12 @@ class komiku {
 					.find(komiku._searchLoader.thumbnailLoader.base)
 					.attr(komiku._searchLoader.thumbnailLoader.attribute)
 					.replace(/\?.*$/, "");
-				const url: string = $(e)
+				let url: string = $(e)
 					.find(komiku._searchLoader.urlLoader.base)
 					.attr(komiku._searchLoader.urlLoader.attribute);
+				if (!url.startsWith("http")) {
+					url = KomikuIdBaseUrl + url;
+				}
 				const metadata: { [key: string]: any } = {};
 				const _tempData: string[] = [];
 				$(e)
