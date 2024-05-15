@@ -27,11 +27,9 @@ export async function search(
 				url = XvideosBaseUrl + url;
 			}
 			const quality: string = $(e).find(".video-hd-mark").text() || "low";
-			// /[^0-9\.K|M]/gi
 			const views: string = $(e)
 				.find(".bg > span > span")
 				.text()
-				// eslint-disable-next-line no-useless-escape
 				.replace(/[^0-9\.K|M]/gi, "");
 			const duration: string = $(e).find("a > .duration").text();
 			const thumbnail: string = $(e).find(".thumb > a > img").attr("data-src");
@@ -76,15 +74,11 @@ export async function detail(
 		$("script").each((i: number, e: Element) => {
 			scripts += $(e).text();
 		});
-		/**
-		 * @p RegExp pattern.
-		 */
 		const titleRegExp = /setVideoTitle\('(.+?)'\)/;
 		const lowRegExp = /setVideoUrlLow\('(.+?)'\)/;
 		const highRegExp = /setVideoUrlHigh\('(.+?)'\)/;
 		const hlsRegExp = /setVideoHLS\('(.+?)'\)/;
 
-		// whatever.
 		const results: XvideosDetailsResults = {
 			title: "",
 			quality: "",

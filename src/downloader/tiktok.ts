@@ -14,7 +14,6 @@ function RapidApiInit(url: string): {
 } {
 	const _key =
 		"JTJGMCUyRmIlMkY4JTJGMyUyRjglMkY4JTJGYiUyRjclMkY3JTJGNSUyRm0lMkZzJTJGaCUyRjQlMkYwJTJGOCUyRjQlMkY5JTJGOCUyRjYlMkYxJTJGMyUyRjAlMkY4JTJGYiUyRmUlMkY3JTJGMCUyRnAlMkYxJTJGNyUyRmMlMkYwJTJGMyUyRjMlMkZqJTJGcyUyRm4lMkYzJTJGZSUyRjAlMkY4JTJGNSUyRmElMkZkJTJGYyUyRjglMkZlJTJGZiUyRjElMkY=";
-	// Attempt to avoid rapidapi detector  :)
 	const key = decodeURIComponent(
 		Buffer.from(_key, "base64").toString("ascii")
 	).replace(/\//g, "");
