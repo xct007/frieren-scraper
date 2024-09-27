@@ -1,9 +1,11 @@
 {
-  "extends": "./tsconfig-base.json",
-  "compilerOptions": {
-    "module": "CommonJS",
-    "outDir": "dist/cjs"
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+	"extends": "./tsconfig-base.json",
+	"compilerOptions": {
+		"module": "CommonJS",
+		"outDir": "dist/cjs",
+		"moduleResolution": "node",
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules", "dist"]
 }

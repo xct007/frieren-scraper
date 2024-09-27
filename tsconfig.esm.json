@@ -1,9 +1,12 @@
 {
-  "extends": "./tsconfig-base.json",
-  "compilerOptions": {
-    "module": "esnext",
-    "outDir": "dist/esm",
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+	"extends": "./tsconfig-base.json",
+	"compilerOptions": {
+		"module": "esnext",
+		"outDir": "dist/esm",
+		"target": "esnext",
+		"moduleResolution": "node",
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules", "dist"]
 }
